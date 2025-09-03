@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito', sans-serif;
+    font-size: 20px;
+
+}
+
+body{
+    background-color: #b9a68d;
+}
+
+.header{
+    background-color: #be9c6f;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 85px;
+    padding: 5px 10%;
+}
+
+/* Logo */
+.header .logo img{
+    height: 70px;
+    width: auto;
+    transition: all 0.3s;
+}
+.header .logo img{
+    cursor: pointer;
+}
+
+.header .logo img:hover{
+    transform: scale(1.2);
+}
+
+.header .nav-links{
+    list-style: none;
+}
+
+.header .nav-links li{
+    display: inline-block;
+    padding: 0 20px;
+}
+
+.header .nav-links li:hover{
+    transform: scale(1.2);
+}
+
+.header .nav-links a{
+    font-size: 700;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+/* Boton carrito */
+.header .nav-links li a:hover{
+    color: #2F4F4F;
+}
+
+.header .btn button{
+    font-weight: 700;
+    color: #917756;
+    padding: 9px 25px;
+    background: #b9a68d;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+.header .btn button:hover{
+    background-color: #917756;
+    color: #b9a68d;
+    scale: 1.2;
+
+}
