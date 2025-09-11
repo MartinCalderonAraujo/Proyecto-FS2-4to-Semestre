@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Demeter</title>
     <link rel="stylesheet" href=" css/barra_navegacion.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="css/pagina_principal.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/carrusel.css">
 </head>
 <body>
     <header class="header">
@@ -22,21 +26,65 @@
         </nav>
         <a href="Login.html" class="btn"><button>Login</button></a>
     </header>
-    <footer></footer>
-    <script>
-        class MyNavbar extends HTMLElement {
-        connectedCallback() {
-            this.innerHTML = `
-            <nav>
-                <li><a href="Demeter.html">Home</a></li>
-                <li><a href="Catalogo.html">Catalogo</a></li>
-                <li><a href="Pedido.html">Pedidos</a></li>
-                <li><a href="Carrito.html">Carrito</a></li>
-            </nav>
-            `;
-        }
-        }
-        customElements.define('my-navbar', MyNavbar);
-    </script>
+
+    <!-- carrusel -->
+    <div id="contenedor-item-carrusel">
+        <div class="item-carrusel" id="item-carrusel-1">
+            <div class="tarjeta-carrusel" id="tarjeta-carrusel-1"><img src="img/vivero1.jpg" alt=""></div>
+            <div class="flechas-carrusel">
+                <a href="#item-carrusel-5"><i class="fa-solid fa-chevron-left"></i></a>
+                <a href="#item-carrusel-2"><i class="fa-solid fa-chevron-right"></i></a>
+            </div>         
+        </div>
+        <div class="item-carrusel" id="item-carrusel-2">
+            <div class="tarjeta-carrusel" id="tarjeta-carrusel-2"><img src="img/vivero2.jpg" alt=""></div>
+            <div class="flechas-carrusel">
+                <a href="#item-carrusel-1"><i class="fa-solid fa-chevron-left"></i></a>
+                <a href="#item-carrusel-3"><i class="fa-solid fa-chevron-right"></i></a>
+            </div>         
+        </div>
+        <div class="item-carrusel" id="item-carrusel-3">
+            <div class="tarjeta-carrusel" id="tarjeta-carrusel-3"><img src="img/vivero3.jpg" alt=""></div>
+            <div class="flechas-carrusel">
+                <a href="#item-carrusel-2"><i class="fa-solid fa-chevron-left"></i></a>
+                <a href="#item-carrusel-4"><i class="fa-solid fa-chevron-right"></i></a>
+            </div>         
+        </div>
+        <div class="item-carrusel" id="item-carrusel-4">
+            <div class="tarjeta-carrusel" id="tarjeta-carrusel-4"><img src="img/vivero4.jpg" alt=""></div>
+            <div class="flechas-carrusel">
+                <a href="#item-carrusel-3"><i class="fa-solid fa-chevron-left"></i></a>
+                <a href="#item-carrusel-5"><i class="fa-solid fa-chevron-right"></i></a>
+            </div>         
+        </div>
+        <div class="item-carrusel" id="item-carrusel-5">
+            <div class="tarjeta-carrusel" id="tarjeta-carrusel-5"><img src="img/vivero5.jpg" alt=""></div>
+            <div class="flechas-carrusel">
+                <a href="#item-carrusel-4"><i class="fa-solid fa-chevron-left"></i></a>
+                <a href="#item-carrusel-1"><i class="fa-solid fa-chevron-right"></i></a>
+            </div>         
+        </div>
+    </div>
+    
+
+    <footer>
+        <div class="footer-content">
+        <div class="left">
+            <h3>Mis Datos</h3>
+            <p>Email: Demeter@gmail.com</p>
+            <p>Teléfono: +569 45677986</p>
+        </div>
+        <div class="right">
+            <h3>Contáctanos</h3>
+            <form action="/submit_form" method="POST">
+            <input type="text" name="nombre" placeholder="Nombre" required>
+            <input type="email" name="correo" placeholder="Correo" required>
+            <input type="tel" name="telefono" placeholder="Número de teléfono" required>
+            <button type="submit">Enviar</button>
+            </form>
+        </div>
+        </div>
+    </footer>
+    <script src="js/carrusel.js"></script>
 </body>
 </html>

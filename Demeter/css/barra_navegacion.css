@@ -8,12 +8,8 @@
 
 }
 
-body{
-    background-color: #b9a68d;
-}
-
 .header{
-    background-color: #be9c6f;
+    background-color: #91c593;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -55,22 +51,22 @@ body{
 }
 /* Boton carrito */
 .header .nav-links li a:hover{
-    color: #2F4F4F;
+    color: #5bad4b;
 }
 
 .header .btn button{
     font-weight: 700;
-    color: #917756;
+    color: #6fbd72;
     padding: 9px 25px;
-    background: #b9a68d;
+    background: #558a65;
     border-radius: 50px;
     cursor: pointer;
     transition: all 0.3s ease 0s;
 }
 
 .header .btn button:hover{
-    background-color: #917756;
-    color: #b9a68d;
+    background-color: #295f42;
+    color: #6fbd72;
     scale: 1.2;
 
 }
