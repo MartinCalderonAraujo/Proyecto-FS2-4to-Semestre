@@ -13,6 +13,10 @@ class producto{
         this.cantidad=cantidad;
         this.total=total;
         this.imagen=imagen;
-    }   
+    }    
     
+}
+
+function irCarrito(){
+    location.href = "Carrito.html";
 }

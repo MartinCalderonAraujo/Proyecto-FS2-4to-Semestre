@@ -1,6 +1,15 @@
 
 var carrito = JSON.parse(localStorage.getItem("carrito"))
 
+function eliminar(indice){
+    if(confirm("Desea Eliminar Registro?")){
+        console.log(indice)
+        carrito.splice(indice,1)
+        console.log("Eliminar Registro")
+        localStorage.setItem("carrito",JSON.stringify(carrito))
+        cargaInicial()
+    }
+}
 
 function cargaInicial(){
             var tabla="<table border=1>"   
@@ -27,13 +36,3 @@ function cargaInicial(){
                 document.getElementById("detalle").innerHTML=tabla     
 }
 
-
-function eliminar(indice){
-    if(confirm("Desea Eliminar Registro?")){
-        console.log(indice)
-        carrito.splice(indice,1)
-        console.log("Eliminar Registro")
-        localStorage.setItem("carrito",JSON.stringify(carrito))
-        cargaInicial()
-    }
-}
