@@ -16,7 +16,3 @@ class producto{
     }    
     
 }
-
-function irCarrito(){
-    location.href = "Carrito.html";
-}
