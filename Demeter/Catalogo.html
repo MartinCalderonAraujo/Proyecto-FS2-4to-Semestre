@@ -44,7 +44,7 @@
             </div>
         </div>
     </header>
-    
+
     <!-- Contenedor de los items de la tienda -->
     <div class="contenedor-item">
         <div class="item">
@@ -52,7 +52,7 @@
                 <img src="img/sensor de humedad.jpg" alt="sensor_humedad">
             </figure>
             <div class="info-producto">
-                <h2>Sendor de humedad</h2>
+                <h2>Sensor de humedad</h2>
                 <p class="precio">$30.000</p>
                 <input type="button" value="Agregar">
                 <button onclick="agregarProducto(1)">Añadir al carrito</button>
@@ -63,7 +63,7 @@
                 <img src="img/sensor de luz.jpg" alt="sensor_luz">
             </figure>
             <div class="info-producto">
-                <h2>Sendor de luz</h2>
+                <h2>Sensor de luz</h2>
                 <p class="precio">$30.000</p>
                 <button onclick="agregarProducto(2)">Añadir al carrito</button>
             </div>
@@ -73,7 +73,7 @@
                 <img src="img/sensor de voltaje.jpg" alt="sensor_voltaje">
             </figure>
             <div class="info-producto">
-                <h2>Sendor de voltaje</h2>
+                <h2>Sensor de voltaje</h2>
                 <p class="precio">$30.000</p>
                 <button onclick="agregarProducto(3)">Añadir al carrito</button>
             </div>
@@ -99,17 +99,13 @@
     </footer>
     <footer>
         <label id="footer1"></label>
-        Carrito:<label id="footer2">0</label></footer>
+        Carrito:<label id="footer2">0</label>
+    </footer>
+
     <script src="js/producto.js"></script>
     <script src="js/basic.js"></script>
-    <script>
-        var productos = [
-            new producto(1, "Sensor de humedad", 30000, "img/sensor de humedad.jpg"),
-            new producto(2, "sensor de luz", 40000, "img/sensor de luz.jpg"),
-            new producto(3, "sensor de voltaje", 10000, "img/sensor de voltaje.jpg")
-        ]
 
-        localStorage.setItem("productos", JSON.stringify(productos));
+    <script>
 
     </script>
 </body>

@@ -6,7 +6,7 @@ class producto{
     total;
     imagen;
 
-    constructor(id,nombre,precio,cantidad,total,imagen){
+    Producto(id,nombre,precio,cantidad,total,imagen){
         this.id=id;
         this.nombre=nombre;
         this.precio=precio;
@@ -31,12 +31,21 @@ function agregarProducto(id) {
     document.getElementById("footer1").innerHTML=nombreProducto;
 }
 
+var productos=[
+            new Producto(1,"Humedad",15000,"img/sensor de humedad.jpg"),
+            new Producto(2,"Luz",1000,"img/sensor de luz.jpg"),
+            new Producto(3,"Voltaje",21000,"img/sensor de voltaje.jpg"),
+        ]
+        // se dejara el listado en LocalStorage
+        localStorage.setItem("productos",JSON.stringify(productos));
+
 
 // MESCLAR CON EL OTRO AGREGAR PRODUCTO, ESTE ES UN COPY PASTE DEL PROYECTO DE LOS PASTELES
 
 function agregarProductoOdl(id){
     console.log("Selecciono:"+id);
     const data=JSON.parse(localStorage.getItem("pasteles"))
+    
     // recorrer el arreglo
     console.log(data[id-1]);
     console.log(data[id-1]["nombre"])
