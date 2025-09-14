@@ -6,7 +6,7 @@
     <title>Catalogo</title>
     <link rel="stylesheet" href="css/pagina_principal.css">
     <link rel="stylesheet" href="css/catalogo.css">
-    <link rel="stylesheet" href=" css/barra_navegacion.css">
+    <link rel="stylesheet" href="css/barra_navegacion.css">
     <link rel="stylesheet" href="css/footer.css">
 </head>
 
@@ -44,6 +44,7 @@
             </div>
         </div>
     </header>
+    
     <!-- Contenedor de los items de la tienda -->
     <div class="contenedor-item">
         <div class="item">
@@ -110,19 +111,6 @@
 
         localStorage.setItem("productos", JSON.stringify(productos));
 
-        function agregarProducto(id) {
-            console.log("Seleccion: " + id);
-            const data = JSON.parse(localStorage.getItem("productos"))
-
-            console.log(data[id-1])
-            console.log(data[id-1]["nombre"])
-            let nombreProducto = data[id-1]["nombre"];
-            var valor = parseInt(document.getElementById("footer1").innerHTML);
-            valor=valor+1;
-            console.log(valor);
-            document.getElementById("footer2").innerHTML=valor;
-            document.getElementById("footer1").innerHTML=nombreProducto;
-        }
     </script>
 </body>
 
