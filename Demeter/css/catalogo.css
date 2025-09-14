@@ -14,14 +14,14 @@ body{
     
 }
 
-/* estilo del carrito */
+/*----- estilo del carrito -----*/
 .icono-carrito{
     width: 40px;
     height: 40px;
     stroke: #000;
 }
 
-/* contador de productos */
+/*----- contador de productos -----*/
 .cont-productos{
     position: absolute;
     top: 55%;
@@ -63,7 +63,7 @@ header{
 }
 
 
-/* estilo de los items */
+/*----- estilo de los items -----*/
 .contenedor-item{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -93,7 +93,7 @@ header{
     transform: scale(1.2);
 }
 
-/* estilo de informacion producto y boton */
+/*----- estilo de informacion producto y boton -----*/
 .info-producto{
     padding: 15px 30px;
     line-height: 2;

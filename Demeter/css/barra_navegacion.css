@@ -17,7 +17,7 @@
     padding: 5px 10%;
 }
 
-/* Logo */
+/*----- Logo -----*/
 .header .logo img{
     height: 70px;
     width: auto;
@@ -49,7 +49,8 @@
     color: rgb(0, 0, 0);
     text-decoration: none;
 }
-/* Boton carrito */
+
+/*----- Boton carrito -----*/
 .header .nav-links li a:hover{
     color: #5bad4b;
 }

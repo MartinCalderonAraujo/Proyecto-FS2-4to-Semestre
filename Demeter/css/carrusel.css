@@ -1,4 +1,4 @@
-/* carrusel */
+/*----- carrusel -----*/
 #contenedor-item-carrusel {
     border: none;
     width: 90%;
@@ -37,7 +37,7 @@
     opacity: 1;
 }
 
-/* flechas carrusel */
+/*----- flechas carrusel -----*/
 .flechas-carrusel {
     background-color: transparent;
     height: 100%;
