@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carrito</title>
     <link rel="stylesheet" href=" css/barra_navegacion.css">
+    <link rel="stylesheet" href="css/footer.css">
 </head>
 
 <body onload="cargaInicial()">
@@ -22,7 +23,38 @@
             <div id="detalle"></div>
         </section>
     </main>
-    <footer></footer>
+    
+    <div>
+        <div>
+            <h2>Cantidad de Productos en el Carrito: <span id="cantidadProductos">0</span></h2>
+        </div>
+
+        <div>
+            <h2>Total a Pagar: $<span id="totalPagar">0</span></h2>
+            <button onclick="finalizarCompra()">Finalizar Compra</button>
+        </div>
+    </div>
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="left">
+                <h3>Mis Datos</h3>
+                <p>Email: Demeter@gmail.com</p>
+                <p>Teléfono: +569 45677986</p>
+            </div>
+            <div class="right">
+                <h3>Contáctanos</h3>
+                <form action="/submit_form" method="POST">
+                <input type="text" name="nombre" placeholder="Nombre" required>
+                <input type="email" name="correo" placeholder="Correo" required>
+                <input type="tel" name="telefono" placeholder="Número de teléfono" required>
+                <button type="submit">Enviar</button>
+                </form>
+            </div>
+        </div>
+    </footer>
 
     <!-- Link JS -->
     <script src="js/carrito.js"></script>
