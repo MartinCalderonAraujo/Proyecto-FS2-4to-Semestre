@@ -1,0 +1,27 @@
+carrito {
+    background-color: white;
+    border-color: #333;
+    color: white;
+    padding: 20px 0;
+    margin-top: auto;
+    padding-bottom: 0;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    margin-left: 25%;
+}
+
+.carrito-content {
+    float: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: max-content;
+    margin: auto;
+    padding: 0 20px;
+}
+
+.footer-content div {
+    flex: 1;
+    margin: 10px;
+}
