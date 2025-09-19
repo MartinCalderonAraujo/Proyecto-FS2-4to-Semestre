@@ -1,0 +1,24 @@
+*::after,
+*::before
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.body {
+    display: grid;
+
+}
+
+#img-producto {
+    width: 300px;
+    height: auto;
+    display: flex;
+    margin: 0 auto;
+}
+
+.contenido-producto p {
+    margin-left: 200px;
+    margin-right: 200px;
+}

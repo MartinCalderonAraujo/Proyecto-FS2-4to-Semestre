@@ -1,0 +1,49 @@
+.container {
+  position: relative;
+  max-width: 1100px;   /* más ancho para dar espacio */
+  margin: 100px auto;
+  height: 750px;       /* más alto también */
+}
+
+.planta {
+  display: block;
+  margin: auto;
+  width: 700px;        /* planta más grande */
+  position: relative;
+  z-index: 1;
+}
+
+.texto {
+  position: absolute;
+  opacity: 0;
+  transition: all 0.8s ease;
+  z-index: 2;
+  width: 280px;        /* textos más legibles */
+}
+
+/* Ajustes de posición con la planta más grande */
+.hoja {
+  top: 20px;
+  right: -100px;
+  height: 300px;
+  width: auto;
+}
+
+.tallo {
+  top: 40px;
+  left: 2px;
+  height: 300px;
+  width: auto;
+}
+
+.raiz {
+  bottom: 160px;
+  right: -50px;
+  height: 200px;
+  width: auto;
+}
+
+.texto.active {
+  opacity: 1;
+  transform: translateY(0);
+}

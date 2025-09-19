@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Demeter</title>
-    <link rel="stylesheet" href=" css/barra_navegacion.css">
+    <link rel="stylesheet" href="css/barra_navegacion.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="css/pagina_principal.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/carrusel.css">
+    <link rel="stylesheet" href="css/reveal-planta.css">
 </head>
+
 <body>
     <header class="header">
         <div class="logo">
@@ -28,68 +31,58 @@
             <a href="Login.html" class="btn"><button>Login</button></a>
             <a href="Register.html" class="btn"><button>Register</button></a>
         </div>
-        
     </header>
-
-    <!-- carrusel -->
-    <div id="contenedor-item-carrusel">
-        <div class="item-carrusel" id="item-carrusel-1">
-            <div class="tarjeta-carrusel" id="tarjeta-carrusel-1"><img src="img/vivero1.jpg" alt=""></div>
-            <div class="flechas-carrusel">
-                <a href="#item-carrusel-5"><i class="fa-solid fa-chevron-left"></i></a>
-                <a href="#item-carrusel-2"><i class="fa-solid fa-chevron-right"></i></a>
-            </div>         
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Demeter</h1>
+            <p>
+                El proyecto busca mejorar el cultivo mediante mejoras en su monitoreo, permitiendo obtener datos que
+                aporten en el cuidado de las plantas
+            </p>
+            <a href="Catalogo.html"><button>Ver productos</button></a>
         </div>
-        <div class="item-carrusel" id="item-carrusel-2">
-            <div class="tarjeta-carrusel" id="tarjeta-carrusel-2"><img src="img/vivero2.jpg" alt=""></div>
-            <div class="flechas-carrusel">
-                <a href="#item-carrusel-1"><i class="fa-solid fa-chevron-left"></i></a>
-                <a href="#item-carrusel-3"><i class="fa-solid fa-chevron-right"></i></a>
-            </div>         
+        <!-- carrusel -->
+        <div class="hero-img">
+            <div id="mi-carrusel"></div>
         </div>
-        <div class="item-carrusel" id="item-carrusel-3">
-            <div class="tarjeta-carrusel" id="tarjeta-carrusel-3"><img src="img/vivero3.jpg" alt=""></div>
-            <div class="flechas-carrusel">
-                <a href="#item-carrusel-2"><i class="fa-solid fa-chevron-left"></i></a>
-                <a href="#item-carrusel-4"><i class="fa-solid fa-chevron-right"></i></a>
-            </div>         
-        </div>
-        <div class="item-carrusel" id="item-carrusel-4">
-            <div class="tarjeta-carrusel" id="tarjeta-carrusel-4"><img src="img/vivero4.jpg" alt=""></div>
-            <div class="flechas-carrusel">
-                <a href="#item-carrusel-3"><i class="fa-solid fa-chevron-left"></i></a>
-                <a href="#item-carrusel-5"><i class="fa-solid fa-chevron-right"></i></a>
-            </div>         
-        </div>
-        <div class="item-carrusel" id="item-carrusel-5">
-            <div class="tarjeta-carrusel" id="tarjeta-carrusel-5"><img src="img/vivero5.jpg" alt=""></div>
-            <div class="flechas-carrusel">
-                <a href="#item-carrusel-4"><i class="fa-solid fa-chevron-left"></i></a>
-                <a href="#item-carrusel-1"><i class="fa-solid fa-chevron-right"></i></a>
-            </div>         
-        </div>
-    </div>
+    </section>
     
+    <!-- Plantas descripcion -->
+    <section>
+        <div class="container">
+            <!-- Planta en el centro -->
+            <img src="img/planta.png" alt="Planta" class="planta">
 
+            <!-- Textos alrededor -->
+            <img src="img/Hojas.png" alt="Texto Hoja" class="reveal texto hoja">
+            <img src="img/Tallo.png" alt="Texto Tallo" class="reveal texto tallo">
+            <img src="img/Raiz.png" alt="Texto Raíz" class="reveal texto raiz">
+        </div>
+
+        </div>
+    </section>
+    <!-- Footer de la pagina -->
     <footer>
         <div class="footer-content">
-        <div class="left">
-            <h3>Mis Datos</h3>
-            <p>Email: Demeter@gmail.com</p>
-            <p>Teléfono: +569 45677986</p>
-        </div>
-        <div class="right">
-            <h3>Contáctanos</h3>
-            <form action="/submit_form" method="POST">
-            <input type="text" name="nombre" placeholder="Nombre" required>
-            <input type="email" name="correo" placeholder="Correo" required>
-            <input type="tel" name="telefono" placeholder="Número de teléfono" required>
-            <button type="submit">Enviar</button>
-            </form>
-        </div>
+            <div class="left">
+                <h3>Mis Datos</h3>
+                <p>Email: Demeter@gmail.com</p>
+                <p>Teléfono: +569 45677986</p>
+            </div>
+            <div class="right">
+                <h3>Contáctanos</h3>
+                <form action="/submit_form" method="POST">
+                    <input type="text" name="nombre" placeholder="Nombre" required>
+                    <input type="email" name="correo" placeholder="Correo" required>
+                    <input type="tel" name="telefono" placeholder="Número de teléfono" required>
+                    <button type="submit">Enviar</button>
+                </form>
+            </div>
         </div>
     </footer>
     <script src="js/carrusel.js"></script>
     <script src="js/basic.js"></script>
+    <script src="js/reveal-planta.js"></script>
 </body>
+
 </html>

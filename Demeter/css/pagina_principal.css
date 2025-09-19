@@ -1,3 +1,120 @@
-body{
-    background-color: white;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* el html ocupara todo el alto de la pagina */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+/* el contenedor ocupa el espacio disponible */
+main, section {
+    flex: 1;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 10%;
+  background: #f5f5f5;
+  border-bottom: 1px solid #ccc;
+}
+
+header nav a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #333;
+}
+
+.user-cart {
+  font-size: 0.9rem;
+}
+
+.cart {
+  margin-top: 5px;
+}
+
+/* Hero */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 100px 10%;
+  background: #ffffff;
+}
+
+.hero-text {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.hero-text h1 {
+  margin-bottom: 15px;
+}
+
+.hero-text p {
+  margin-bottom: 20px;
+}
+
+.hero-text button {
+  padding: 10px 20px;
+  background: #000;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.hero-img {
+  flex: 1;
+  height: 250px;
+  background: #ccc;
+}
+
+/* Productos */
+.productos {
+  padding: 40px 10%;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+  background: #fff;
+}
+
+.card .img {
+  height: 120px;
+  background: #ddd;
+  margin-bottom: 10px;
+}
+
+/* imagen planta */
+#planta1 {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+}
+
+.imagen-planta {
+    z-index: 1000;
 }

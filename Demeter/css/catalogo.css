@@ -54,6 +54,7 @@ body{
 
 img{
     max-width: 100%;
+    cursor: pointer;
 }
 
 header{
@@ -68,6 +69,7 @@ header{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
+    flex: 1;
 }
 
 .item{

@@ -15,6 +15,13 @@
     align-items: center;
     height: 85px;
     padding: 5px 10%;
+    position: sticky;
+    z-index: 1000;
+    top: 0;
+}
+
+#botones-login{
+    visibility: hidden;
 }
 
 /*----- Logo -----*/
