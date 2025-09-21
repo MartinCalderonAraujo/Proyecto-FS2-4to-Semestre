@@ -2,10 +2,10 @@ function reveal() {
     var reveals = document.querySelectorAll(".reveal");
     for (var i = 0; i < reveals.length; i++) {
       var windowHeight = window.innerHeight;
-      var elementTop = reveals[i].getBoundingClientRect().top;
-      var elementVisible = 100;
+      var elementoTop = reveals[i].getBoundingClientRect().top;
+      var elementoVisible = 100;
 
-      if (elementTop < windowHeight - elementVisible && elementTop > 0) {
+      if (elementoTop < windowHeight - elementoVisible && elementoTop > 0) {
         // Aparece cuando entra en pantalla
         reveals[i].classList.add("active");
       } else {

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Producto</title>
+    <link rel="stylesheet" href="css/barra_navegacion.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="css/pagina_principal.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/pagina_sensor.css">
+</head>
+
+<body>
+    <div id="navbar"></div>
+
+    <!-- imagen -->
+    <div>
+        <img id="img-producto" src="img/sensor de humedad.jpg" alt="">
+    </div>
+    <!-- descripcio del producto -->
+    <div class="contenido-producto">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero deleniti culpa placeat distinctio commodi.
+            Accusamus totam molestiae autem cupiditate adipisci facere sed debitis sunt dolores, beatae quibusdam
+            nesciunt perspiciatis at.</p>
+        <br>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil iure omnis non quisquam, porro odio impedit
+            facilis inventore soluta fuga quas fugiat, quasi fugit provident qui libero? Nisi, excepturi molestiae.</p><br>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="left">
+                <h3>Mis Datos</h3>
+                <p>Email: Demeter@gmail.com</p>
+                <p>Teléfono: +569 45677986</p>
+            </div>
+            <div class="right">
+                <h3>Contáctanos</h3>
+                <form action="/submit_form" method="POST">
+                    <input type="text" name="nombre" placeholder="Nombre" required>
+                    <input type="email" name="correo" placeholder="Correo" required>
+                    <input type="tel" name="telefono" placeholder="Número de teléfono" required>
+                    <button type="submit">Enviar</button>
+                </form>
+            </div>
+        </div>
+    </footer>
+</body>
+<script src="js/barra_navegacion.js"></script>
+</html>

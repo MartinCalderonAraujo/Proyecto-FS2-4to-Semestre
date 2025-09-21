@@ -7,8 +7,7 @@
     font-size: 20px;
 
 }
-
-.header{
+.barra-navegacion-header {
     background-color: #91c593;
     display: flex;
     justify-content: space-between;
@@ -16,8 +15,9 @@
     height: 85px;
     padding: 5px 10%;
     position: sticky;
-    z-index: 1000;
     top: 0;
+    z-index: 1000;
+    width: 100%;
 }
 
 #botones-login{
@@ -25,44 +25,45 @@
 }
 
 /*----- Logo -----*/
-.header .logo img{
+.barra-navegacion-header .logo img{
     height: 70px;
     width: auto;
     transition: all 0.3s;
 }
-.header .logo img{
+.barra-navegacion-header .logo img{
     cursor: pointer;
 }
 
-.header .logo img:hover{
+.barra-navegacion-header .logo img:hover{
     transform: scale(1.2);
 }
 
-.header .nav-links{
+.barra-navegacion-header .nav-links{
     list-style: none;
 }
 
-.header .nav-links li{
+.barra-navegacion-header .nav-links li{
     display: inline-block;
     padding: 0 20px;
 }
 
-.header .nav-links li:hover{
+.barra-navegacion-header .nav-links li:hover{
     transform: scale(1.2);
 }
 
-.header .nav-links a{
-    font-size: 700;
+.barra-navegacion-header .nav-links a {
+    font-weight: 700;  /* ✔ Negrita */
+    font-size: 20px;   /* ✔ Tamaño normal */
     color: rgb(0, 0, 0);
     text-decoration: none;
 }
 
-/*----- Boton carrito -----*/
-.header .nav-links li a:hover{
+/*----- Boton Login/Registrar -----*/
+.barra-navegacion-header .nav-links li a:hover{
     color: #5bad4b;
 }
 
-.header .btn button{
+.barra-navegacion-header .btn button{
     font-weight: 700;
     color: #6fbd72;
     padding: 9px 25px;
@@ -72,7 +73,7 @@
     transition: all 0.3s ease 0s;
 }
 
-.header .btn button:hover{
+.barra-navegacion-header .btn button:hover{
     background-color: #295f42;
     color: #6fbd72;
     scale: 1.2;
