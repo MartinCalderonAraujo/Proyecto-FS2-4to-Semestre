@@ -11,8 +11,18 @@ carrito {
     margin-left: 25%;
 }
 
-.carrito-content {
+.carrito-content div{
     float: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: max-content;
+    margin: auto;
+    padding: 0 20px;
+}
+
+.carrito-pago div{
+    float: right;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
