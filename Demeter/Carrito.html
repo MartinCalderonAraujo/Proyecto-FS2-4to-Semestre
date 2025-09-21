@@ -22,7 +22,7 @@
     </main>
 
     <!-- Resumen de Compra -->
-    <div class="carrito-content" id="resumen-compra">
+    <div class="carrito-content" id="resumen-compra" onload="cargaInicial()">
         <div>
             <h2>Cantidad de Productos en el Carrito: <span id="cantidadProductos">0</span></h2>
         </div>
@@ -31,6 +31,29 @@
             <h2>Total a Pagar: $<span id="totalPagar">0</span></h2>
             <button onclick="finalizarCompra()">Finalizar Compra</button>
         </div>
+    </div>
+
+    <!-- Proceso Pago -->
+    <div class="carrito-pago" id="proceso-pago">
+        <div>
+            <h2>Proceso de Pago</h2>
+            <form id="formPago">
+                <label for="nombre">Nombre Completo:</label>
+                <input type="text" id="nombre" name="nombre" required>
+
+                <label for="direccion">Dirección de Envío:</label>
+                <input type="text" id="direccion" name="direccion" required>
+
+                <label for="tarjeta">Número de Tarjeta:</label>
+                <input type="text" id="tarjeta" name="tarjeta" required>
+
+                <label for="cvv">CVV:</label>
+                <input type="text" id="cvv" name="cvv" required>
+
+                <button type="submit">Pagar Ahora</button>
+            </form>
+        </div>
+        
     </div>
 
     <!-- Footer -->
