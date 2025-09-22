@@ -1,54 +1,69 @@
-.container {
-  position: relative;
-  max-width: 1100px;   /* más ancho para dar espacio */
-  margin: 100px auto;
-  height: 750px;       /* más alto también */
+/* contenedor externo: escala el conjunto */
+.plantas {
+  padding: 56px 16px;
+  display: grid;
+  place-items: center;
 }
 
-/* IMG planta principal */
-.planta {
-  display: block;
-  margin: auto;
-  width: 700px;        
+.plantas-composite{
+  width: min(100%, 1100px);
+  aspect-ratio: 1100 / 750;
   position: relative;
+  isolation: isolate;
+}
+
+.stage{
+  position: absolute;
+  inset: 0;
+}
+
+.stage img{
+  position: absolute;
+  height: auto;
+}
+
+/* Planta: width 700px; centrada. Anclo al fondo para que “asiente” el macetero */
+.planta{
+  width: calc(700 / 1100 * 100%);         
+  left: 50%;
+  bottom: 6%;                              
+  transform: translateX(-50%);
   z-index: 1;
 }
-
-/* texto */
-.texto {
-  position: absolute;
-  opacity: 0;
-  transition: all 0.8s ease;
+.texto.hoja{
+  height: calc(300 / 750 * 100%);           /* 40% del alto */
+  right: calc(-100 / 1100 * 100%);          /* -9.091% */
+  top: calc(20 / 750 * 100%);               /* 2.667% */
+  width: auto;
   z-index: 2;
-  width: 280px;
 }
 
-/* Ajustes de posición con la planta principal */
-.hoja {
-  top: 20px;
-  right: 30px;
-  height: 270px;
+
+.texto.tallo{
+  height: calc(300 / 750 * 100%);           /* 40% del alto */
+  left: calc(2 / 1100 * 100%);              /* 0.182% */
+  top: calc(40 / 750 * 100%);               /* 5.333% */
   width: auto;
-  position: absolute;
+  z-index: 2;
 }
 
-.tallo {
-  top: 40px;
-  left: 110px;
-  height: 300px;
+.texto.raiz{
+  height: calc(200 / 750 * 100%);           /* 26.667% del alto */
+  right: calc(-50 / 1100 * 100%);           /* -4.545% */
+  bottom: calc(160 / 750 * 100%);           /* 21.333% */
   width: auto;
-  position: absolute;
+  z-index: 2;
 }
 
-.raiz {
-  bottom: 160px;
-  right: 60px;
-  height: 200px;
-  width: auto;
-  position: absolute;
+.texto{
+  opacity: 0;
+  transition: opacity .6s ease, transform .6s ease;
 }
-
-.texto.active {
+.texto.active{
   opacity: 1;
-  transform: translateY(0);
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce){
+  *{ transition: none !important; }
 }
