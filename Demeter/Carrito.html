@@ -34,37 +34,37 @@
     </div>
 
     <!-- Proceso Pago -->
-
-    <div>
-        <p>Productos en carrito: <span id="productos">0</span></p>
-        <p>Items distintos: <span id="items">0</span></p>
-        <p>Subtotal: $<span id="subtotal">0</span></p>
-        <p>IVA (19%): $<span id="iva">0</span></p>
-        <p>Total: $<span id="total">0</span></p>
-    </div>
-
     <aside class="carrito-pago" id="proceso-pago">
         <div>
             <h2>Proceso de Pago</h2>
             <form id="formPago">
                 <label for="nombre">Nombre Completo:</label>
                 <input type="text" id="nombre" name="nombre" required>
-
+                
                 <label for="direccion">Dirección de Envío:</label>
                 <input type="text" id="direccion" name="direccion" required>
-
+                
                 <label for="tarjeta">Número de Tarjeta:</label>
                 <input type="text" id="tarjeta" name="tarjeta" required>
-
+                
                 <label for="cvv">CVV:</label>
                 <input type="text" id="cvv" name="cvv" required>
-
+                
                 <button type="submit">Pagar Ahora</button>
             </form>
         </div>
         
     </aside>
-
+    
+    <!-- Detalle de Compra -->
+    <div id="resumen">
+        <p>Productos en carrito: <span id="productos">0</span></p>
+        <p>Items distintos: <span id="items">0</span></p>
+        <p>Subtotal: $<span id="subtotal">0</span></p>
+        <p>IVA (19%): $<span id="iva">0</span></p>
+        <p>Total: $<span id="total">0</span></p>
+    </div>
+    
     <!-- Footer -->
     <footer>
         <div class="footer-content">
