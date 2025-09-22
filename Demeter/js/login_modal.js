@@ -37,23 +37,27 @@
 
     document.body.appendChild(ModalBody.content);
 
-    // Enfoca email al abrir y aplica validación nativa estilo Bootstrap
-    const modalEl = document.getElementById('loginModal');
-    const form = document.getElementById('loginForm');
-
-    modalEl.addEventListener('shown.bs.modal', () => {
-      modalEl.querySelector('input[name="email"]')?.focus();
+    // aqui se define modalElemento y formulario para rescatar elementos del modal
+    const modalElemento = document.getElementById('loginModal');
+    const formulario = document.getElementById('loginForm');
+    
+//ModalElemento solo sirve para enfocar el primer campo al abrir el modal
+    modalElemento.addEventListener('shown.bs.modal', () => {
+      modalElemento.querySelector('input[name="email"]')?.focus();
     });
 
-    form?.addEventListener('submit', (e) => {
+    //Esta linea si es importante, valida el formulario con las constrains de HTML5 que definimos en el HTML
+    formulario?.addEventListener('submit', (e) => {
       if (!form.checkValidity()) {
         e.preventDefault();
         e.stopPropagation();
       }
-      form.classList.add('was-validated');
+      formulario.classList.add('was-validated');
     });
   }
 
+  // Verifica si el DOM ya está cargado. Si ya está cargado, ejecuta inmediatamente
+  // Si no, espera a que cargue
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', inject);
   } else {
