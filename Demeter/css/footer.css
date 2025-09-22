@@ -14,8 +14,7 @@ footer {
     padding: 20px 0;
     bottom: 0;
     left: 0;
-    width: 100vw;
-    margin-left: calc(-50vw + 50%);
+    width: 100%;
 }
 
 .footer-content {
@@ -24,7 +23,7 @@ footer {
     align-items: flex-start;
     max-width: max-content;
     margin: auto;
-    padding: 0 20px;
+    padding: 10px 20px 10px;
 }
 
 .footer-content div {

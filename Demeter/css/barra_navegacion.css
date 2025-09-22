@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
 *{
     box-sizing: border-box;
     margin: 0;
@@ -9,6 +8,7 @@
 }
 .barra-navegacion-header {
     background-color: #91c593;
+    max-width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -17,7 +17,8 @@
     position: sticky;
     top: 0;
     z-index: 1000;
-    width: 100%;
+    width: 100vw;
+    box-sizing: border-box;
 }
 
 #botones-login{
@@ -52,8 +53,8 @@
 }
 
 .barra-navegacion-header .nav-links a {
-    font-weight: 700;  /* ✔ Negrita */
-    font-size: 20px;   /* ✔ Tamaño normal */
+    font-weight: 700;  
+    font-size: 20px;   
     color: rgb(0, 0, 0);
     text-decoration: none;
 }

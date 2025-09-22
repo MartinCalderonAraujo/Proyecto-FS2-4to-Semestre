@@ -15,36 +15,12 @@ html, body {
 body {
     display: flex;
     flex-direction: column;
+    overflow-x: hidden;
+    
 }
 
 /* el contenedor ocupa el espacio disponible */
-main, section {
-    flex: 1;
-}
 
-/* Header */
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 10%;
-  background: #f5f5f5;
-  border-bottom: 1px solid #ccc;
-}
-
-header nav a {
-  margin: 0 10px;
-  text-decoration: none;
-  color: #333;
-}
-
-.user-cart {
-  font-size: 0.9rem;
-}
-
-.cart {
-  margin-top: 5px;
-}
 
 /* Hero */
 .hero {
