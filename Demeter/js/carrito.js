@@ -1,3 +1,20 @@
+class Producto {
+    id;
+    nombre;
+    precio;
+    imagen;
+    cantidad;
+    total;
+
+    constructor(id, nombre, precio, cantidad, total, imagen) {
+        this.id = id;
+        this.nombre = nombre;
+        this.precio = precio;
+        this.imagen = imagen;
+        this.cantidad = cantidad;
+        this.total = total;
+    }
+}
 
 var carrito = JSON.parse(localStorage.getItem("carrito"))
 

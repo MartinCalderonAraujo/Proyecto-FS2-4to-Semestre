@@ -1,34 +1,98 @@
-carrito {
+#carrito {
     background-color: white;
-    border-color: #333;
-    color: white;
+    border: 1px solid #333;
+    color: #333;
     padding: 20px 0;
     margin-top: auto;
-    padding-bottom: 0;
     bottom: 0;
     left: 0;
     width: 100vw;
     margin-left: 25%;
 }
 
-.carrito-content div{
-    float: left;
+.carrito-content {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
-    max-width: max-content;
-    margin: auto;
-    padding: 0 20px;
+    align-items: center;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 1000px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
 }
 
-.carrito-pago div{
-    float: right;
+.carrito-content h2 {
+    margin: 0;
+    font-size: 20px;
+    color: #333;
+}
+
+.carrito-content button {
+    background: #27ae60;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+/* RECORDAR (CAMBIO DE COLOR AL PASAR MOUSE ENCIMA) */
+.carrito-content button:hover {
+    background: #219150;
+}
+
+.carrito-pago {
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 600px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.carrito-pago h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.carrito-pago form {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    max-width: max-content;
-    margin: auto;
-    padding: 0 20px;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.carrito-pago label {
+    font-weight: bold;
+    font-size: 14px;
+    color: #444;
+}
+
+.carrito-pago input {
+    padding: 8px 10px;
+    border: 1px solid #bbb;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.carrito-pago button {
+    background: #27ae60;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin-top: 10px;
+}
+
+.carrito-pago button:hover {
+    background: #219150;
 }
 
 .footer-content div {
