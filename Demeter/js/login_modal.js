@@ -1,10 +1,10 @@
-// Inserta un modal Bootstrap de login (id fijo "loginModal") una sola vez por página.
-(function () {
-  function inject() {
-    if (document.getElementById('loginModal')) return;
 
-    const tpl = document.createElement('template');
-    tpl.innerHTML = `
+(function () { //esto hace que se ejecute el script inmediatamente al cargar la página
+  function inject() {
+    if (document.getElementById('loginModal')) return; // Evita inyectar si ya existe
+
+    const ModalBody = document.createElement('template');
+    ModalBody.innerHTML = `
 <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content bg-dark text-light border-secondary">
@@ -21,8 +21,8 @@
           </div>
           <div class="mb-3">
             <label class="form-label">Contraseña</label>
-            <input class="form-control" type="password" name="password" minlength="6" placeholder="••••••••" required>
-            <div class="invalid-feedback">Mínimo 6 caracteres.</div>
+            <input class="form-control" type="password" name="password" placeholder="••••••••" required>
+            <div class="invalid-feedback">No puede estar vacio el campo.</div>
           </div>
           <div class="form-check mb-3">
             <input class="form-check-input" type="checkbox" name="remember" id="remember">
@@ -35,7 +35,7 @@
   </div>
 </div>`;
 
-    document.body.appendChild(tpl.content);
+    document.body.appendChild(ModalBody.content);
 
     // Enfoca email al abrir y aplica validación nativa estilo Bootstrap
     const modalEl = document.getElementById('loginModal');

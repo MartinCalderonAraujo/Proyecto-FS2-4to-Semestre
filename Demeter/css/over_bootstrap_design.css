@@ -1,0 +1,47 @@
+.barra-navegacion-header .btn-container {
+    display: flex;
+    gap: 10px;       /* separación entre botones */
+    align-items: center;
+}
+
+
+.barra-navegacion-header .btn.login-btn,
+.barra-navegacion-header .btn.register-btn {
+    font-weight: 700;
+    font-size: 0.75rem;
+    padding: 8px 20px;       /* altura y ancho del botón */
+    line-height: 1.2;        /* centra el texto verticalmente */
+    border-radius: 25px;     /* curvatura consistente */
+    display: inline-flex;     
+    align-items: center;      /* centrado vertical */
+    justify-content: center;
+    gap: 5px;                /* separación interna si hay iconos */
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+/* Login */
+.barra-navegacion-header .btn.login-btn {
+    color: #6fbd72;
+    background-color: #558a65;
+    border: none;
+}
+
+.barra-navegacion-header .btn.login-btn:hover {
+    background-color: #295f42;
+    color: #6fbd72;
+    transform: scale(1.1);
+}
+
+/* Register */
+.barra-navegacion-header .btn.register-btn {
+    color: #ffffff;
+    background-color: #4a7a5a;
+    border: none;
+}
+
+.barra-navegacion-header .btn.register-btn:hover {
+    background-color: #2c4c34;
+    transform: scale(1.1);
+}
