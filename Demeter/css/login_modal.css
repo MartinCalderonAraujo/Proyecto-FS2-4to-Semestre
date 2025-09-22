@@ -1,0 +1,118 @@
+
+#login-modal.modal {
+  display: none;            /* oculto por defecto */
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/* Estado visible: flex para centrar SOLO cuando está activo */
+#login-modal.modal.active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Caja del modal */
+.modal-content {
+  background: #222;
+  color: #fff;
+  padding: 24px 28px 18px 28px;
+  border-radius: 10px;
+  min-width: 320px;
+  max-width: 90vw;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Botón cerrar (X) */
+.close-modal {
+  position: absolute;
+  right: 12px;
+  top: 10px;
+  font-size: 24px;
+  color: #fff;
+  cursor: pointer;
+  background: none;
+  border: none;
+  line-height: 1;
+}
+
+/* Formulario */
+#login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#login-form label {
+  font-weight: 500;
+  margin-bottom: 2px;
+}
+
+#login-form input[type="email"],
+#login-form input[type="password"] {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #888;
+  background: #333;
+  color: #fff;
+}
+
+/* Estados de error simples */
+#login-form input.invalid,
+#login-form input:invalid {
+  border-color: #e74c3c;
+}
+
+.invalid-feedback {
+  display: none;
+  color: #e74c3c;
+  font-size: 0.9em;
+  margin-top: -6px;
+  margin-bottom: 2px;
+}
+
+#login-form input.invalid + .invalid-feedback,
+#login-form input:invalid + .invalid-feedback {
+  display: block;
+}
+
+/* Recordarme */
+.remember-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 4px 0 8px 0;
+}
+
+/* Botón enviar */
+#login-form button[type="submit"] {
+  background: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+#login-form button[type="submit"]:hover {
+  background: #388e3c;
+}
+
+/* Responsive simple */
+@media (max-width: 480px) {
+  .modal-content {
+    min-width: 90vw;
+    padding: 16px;
+  }
+}
