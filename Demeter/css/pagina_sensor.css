@@ -1,6 +1,5 @@
 *::after,
-*::before
-*{
+*::before * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -11,14 +10,21 @@
 
 }
 
-#img-producto {
-    width: 700px;
-    height: auto;
-    display: flex;
-    margin: 0 auto;
+.contenedor-imagen-producto {
+    margin-top: 100px;
+    margin-bottom: 100px;
 }
 
-.contenido-producto p {
+#img-producto {
+    width: 600px;
+    height: 500px;
+    display: block;
+    margin: 0 auto;
+    object-fit: cover;
+}
+
+.contenido-producto {
     margin-left: 200px;
     margin-right: 200px;
+    margin-bottom: 100px;
 }
