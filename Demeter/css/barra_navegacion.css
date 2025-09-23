@@ -6,8 +6,8 @@
     font-size: 20px;
 
 }
+/*  */
 .barra-navegacion-header {
-    background-color: #91c593;
     max-width: 100%;
     display: flex;
     justify-content: space-between;

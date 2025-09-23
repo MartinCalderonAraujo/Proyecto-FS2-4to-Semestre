@@ -1,0 +1,48 @@
+.nombre-proyecto img {
+    width:1000px;
+}
+
+/* Nombre proyecto */
+.nombre-proyecto {
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.nombre-proyecto h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.informacion-proyecto {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.informacion-proyecto h2 {
+    margin-bottom: 30px;
+    font-size: 2rem;
+}
+
+.informacion-proyecto text {
+    color: white;
+}
+
+
+/* Mapa */
+.iframe-contenedor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.iframe-contenedor iframe {
+    width: 100%;
+    max-width: 800px;
+    height: 450px;
+    max-height: 80vh;
+    border: none;
+}
+
