@@ -107,7 +107,16 @@ document.addEventListener('DOMContentLoaded', function () {
     CloseRegisterBtn.addEventListener('click', closeRegister);
   }
 
-  // Validación LOGIN con redirección
+  // LOCAL STORAGE
+  function getUsers() {
+    return JSON.parse(localStorage.getItem("usuarios_validos")) || [];
+  }
+
+  function saveUsers(users) {
+    localStorage.setItem("usuarios_validos", JSON.stringify(users));
+  }
+
+  // Validación LOGIN
   if (LoginForm) {
     LoginForm.addEventListener('submit', function (e) {
       e.preventDefault();
@@ -130,13 +139,19 @@ document.addEventListener('DOMContentLoaded', function () {
       }
 
       if (valid) {
-        // Redirige a login.html en resources
-        window.location.href = "/Demeter/extras/login.html";
+        const users = getUsers();
+        const success_login = users.find(u => u.email === email.value && u.password === password.value);
+
+        if (success_login) {
+          window.location.href = "/Demeter/extras/login.html"; // redirige a página de administrador
+        } else {
+          alert("Correo o contraseña incorrectos.");
+        }
       }
     });
   }
 
-  // Validación REGISTER con redirección
+  // Validación REGISTER
   if (RegisterForm) {
     RegisterForm.addEventListener('submit', function (e) {
       e.preventDefault();
@@ -168,8 +183,17 @@ document.addEventListener('DOMContentLoaded', function () {
       }
 
       if (valid) {
-        // Redirección a register.html en resources
-        window.location.href = "/Demeter/extras/register.html";
+        let users = getUsers();
+
+        if (users.some(u => u.email === email.value)) {
+          alert("Este correo ya está registrado.");
+          return;
+        }
+
+        users.push({ email: email.value, password: password.value });
+        saveUsers(users);
+
+        window.location.href = "/Demeter/extras/register.html"; // después de registrarse, va demeter
       }
     });
   }
