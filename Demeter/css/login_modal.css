@@ -116,3 +116,94 @@
     padding: 16px;
   }
 }
+
+/* AQUI ESTA EL REGISTER NO TOCAR*/
+
+/* --- MODAL REGISTER --- */
+#register-modal.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+#register-modal.modal.active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Caja del modal */
+#register-modal .modal-content {
+  background: #222;
+  color: #fff;
+  padding: 24px 28px 18px 28px;
+  border-radius: 10px;
+  min-width: 320px;
+  max-width: 90vw;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Formulario register */
+#register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#register-form label {
+  font-weight: 500;
+  margin-bottom: 2px;
+}
+
+#register-form input[type="email"],
+#register-form input[type="password"] {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #888;
+  background: #333;
+  color: #fff;
+}
+
+/* Estados de error simples */
+#register-form input.invalid,
+#register-form input:invalid {
+  border-color: #e74c3c;
+}
+
+#register-form input.invalid + .invalid-feedback,
+#register-form input:invalid + .invalid-feedback {
+  display: block;
+}
+
+/* Recordarme y botones */
+#register-form button[type="submit"] {
+  background: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+#register-form button[type="submit"]:hover {
+  background: #388e3c;
+}
+
+/* Responsive simple */
+@media (max-width: 480px) {
+  #register-modal .modal-content {
+    min-width: 90vw;
+    padding: 16px;
+  }
+}
