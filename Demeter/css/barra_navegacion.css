@@ -8,6 +8,7 @@
 }
 /*  */
 .barra-navegacion-header {
+    background-color: #a3d9a5;
     max-width: 100%;
     display: flex;
     justify-content: space-between;
