@@ -48,3 +48,22 @@ footer {
     color: white;
     cursor: pointer;
 }
+
+
+/* QUIENES SOMOS LINK */
+.footer-content a:link{
+    color: blue;
+    text-decoration: none;
+}
+
+.footer-content a:visited{
+    color: purple;
+    opacity: 10%;
+    text-decoration: none;
+    
+}
+
+.footer-content a:hover{
+    color: red;
+    text-decoration: underline;
+}
