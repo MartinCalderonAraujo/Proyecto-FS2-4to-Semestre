@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', function () {
   // Crear el modal LOGIN si no existe
   if (!document.getElementById('login-modal')) {
@@ -10,14 +9,12 @@ document.addEventListener('DOMContentLoaded', function () {
       <div class="modal-content" id="login-modal-content">
         <button class="close-modal" id="close-login-modal" aria-label="Cerrar">×</button>
         <h2 id="login-title">Iniciar sesión</h2>
-        <form id="login-form" action="/Demeter/extras/login.html" method="get" novalidate>
+        <form id="login-form">
           <label for="login-email">Correo</label>
-          <input id="login-email" name="email" type="email" placeholder="tucorreo@dominio.com" required>
-          <span class="invalid-feedback">Ingresa un correo válido.</span>
+          <input id="login-email" name="email" type="text" placeholder="tucorreo@gmail.com">
 
           <label for="login-password">Contraseña</label>
-          <input id="login-password" name="password" type="password" placeholder="••••••••" required>
-          <span class="invalid-feedback">No puede estar vacío el campo.</span>
+          <input id="login-password" name="password" type="password" placeholder="••••••••">
 
           <div class="remember-row">
             <input type="checkbox" id="remember" name="remember">
@@ -41,18 +38,15 @@ document.addEventListener('DOMContentLoaded', function () {
       <div class="modal-content" id="register-modal-content">
         <button class="close-modal" id="close-register-modal" aria-label="Cerrar">×</button>
         <h2 id="register-title">Registrarse</h2>
-        <form id="register-form" action="/Demeter/extras/register.html" method="get" novalidate>
+        <form id="register-form">
           <label for="register-email">Correo</label>
-          <input id="register-email" name="email" type="email" placeholder="tucorreo@dominio.com" required>
-          <span class="invalid-feedback">Ingresa un correo válido.</span>
+          <input id="register-email" name="email" type="text" placeholder="tucorreo@gmail.com">
 
           <label for="register-password">Contraseña</label>
-          <input id="register-password" name="password" type="password" placeholder="••••••••" required>
-          <span class="invalid-feedback">No puede estar vacío el campo.</span>
+          <input id="register-password" name="password" type="password" placeholder="••••••••">
 
           <label for="register-confirm">Confirmar contraseña</label>
-          <input id="register-confirm" name="confirm" type="password" placeholder="••••••••" required>
-          <span class="invalid-feedback">Las contraseñas deben coincidir.</span>
+          <input id="register-confirm" name="confirm" type="password" placeholder="••••••••">
 
           <button type="submit">Crear cuenta</button>
         </form>
@@ -113,64 +107,70 @@ document.addEventListener('DOMContentLoaded', function () {
     CloseRegisterBtn.addEventListener('click', closeRegister);
   }
 
-  // Validación LOGIN
+  // Validación LOGIN con redirección
   if (LoginForm) {
     LoginForm.addEventListener('submit', function (e) {
+      e.preventDefault();
       let valid = true;
 
       const email = document.getElementById('login-email');
       const password = document.getElementById('login-password');
 
-      if (!email.value || !email.checkValidity()) {
-        email.classList.add('invalid');
+      if (!email.value) {
+        alert("El correo no puede estar vacío.");
         valid = false;
-      } else {
-        email.classList.remove('invalid');
+      } else if (!email.value.endsWith("@gmail.com")) {
+        alert("El correo debe ser una cuenta @gmail.com");
+        valid = false;
       }
 
       if (!password.value) {
-        password.classList.add('invalid');
+        alert("La contraseña no puede estar vacía.");
         valid = false;
-      } else {
-        password.classList.remove('invalid');
       }
 
-      if (!valid) e.preventDefault();
+      if (valid) {
+        // Redirige a login.html en resources
+        window.location.href = "/Demeter/extras/login.html";
+      }
     });
   }
 
-  // Validación REGISTER
+  // Validación REGISTER con redirección
   if (RegisterForm) {
     RegisterForm.addEventListener('submit', function (e) {
+      e.preventDefault();
       let valid = true;
 
       const email = document.getElementById('register-email');
       const password = document.getElementById('register-password');
       const confirm = document.getElementById('register-confirm');
 
-      if (!email.value || !email.checkValidity()) {
-        email.classList.add('invalid');
+      if (!email.value) {
+        alert("El correo no puede estar vacío.");
         valid = false;
-      } else {
-        email.classList.remove('invalid');
+      } else if (!email.value.endsWith("@gmail.com")) {
+        alert("El correo debe ser una cuenta @gmail.com");
+        valid = false;
       }
 
       if (!password.value) {
-        password.classList.add('invalid');
+        alert("La contraseña no puede estar vacía.");
         valid = false;
-      } else {
-        password.classList.remove('invalid');
       }
 
-      if (!confirm.value || confirm.value !== password.value) {
-        confirm.classList.add('invalid');
+      if (!confirm.value) {
+        alert("Debes confirmar tu contraseña.");
         valid = false;
-      } else {
-        confirm.classList.remove('invalid');
+      } else if (confirm.value !== password.value) {
+        alert("Las contraseñas no coinciden.");
+        valid = false;
       }
 
-      if (!valid) e.preventDefault();
+      if (valid) {
+        // Redirección a register.html en resources
+        window.location.href = "/Demeter/extras/register.html";
+      }
     });
   }
-
 });
