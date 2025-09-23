@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
       <div class="modal-content" id="login-modal-content">
         <button class="close-modal" id="close-login-modal" aria-label="Cerrar">×</button>
         <h2 id="login-title">Iniciar sesión</h2>
-        <form id="login-form" action="/login" method="post" novalidate>
+        <form id="login-form" action="/Demeter/extras/login.html" method="get" novalidate>
           <label for="login-email">Correo</label>
           <input id="login-email" name="email" type="email" placeholder="tucorreo@dominio.com" required>
           <span class="invalid-feedback">Ingresa un correo válido.</span>
@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function () {
       <div class="modal-content" id="register-modal-content">
         <button class="close-modal" id="close-register-modal" aria-label="Cerrar">×</button>
         <h2 id="register-title">Registrarse</h2>
-        <form id="register-form" action="/register" method="post" novalidate>
+        <form id="register-form" action="/Demeter/extras/register.html" method="get" novalidate>
           <label for="register-email">Correo</label>
           <input id="register-email" name="email" type="email" placeholder="tucorreo@dominio.com" required>
           <span class="invalid-feedback">Ingresa un correo válido.</span>
