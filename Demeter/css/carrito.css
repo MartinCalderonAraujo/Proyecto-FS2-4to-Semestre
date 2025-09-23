@@ -46,6 +46,7 @@
     background: #219150;
 }
 
+/* PROCESO DE PAGO / TARJETA */
 .carrito-pago {
     background: #fff;
     border: 1px solid #ccc;
@@ -54,6 +55,9 @@
     margin: 20px auto;
     max-width: 450px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    margin-right: auto;
+    margin-left: 990px;
+    margin-top: -345px;
 }
 
 .carrito-pago h2 {
@@ -100,15 +104,17 @@
 .footer-content div {
     flex: 1;
     margin: 10px;
-} 
-*/
+}  */
+
 
 /* INTENTO TABLA */
 table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 20px;
+    margin-top: 50px;
     max-width: 800px;
+    margin-right: 650px;
+    margin-left: auto;
     /* box-shadow: 0 4px 10px rgba(0,0,0,0.08); */
 }
 
@@ -165,6 +171,10 @@ table td::before {
     flex-direction: column;
     gap: 12px;
     font-family: "Segoe UI", Tahoma, sans-serif;
+    margin-right: 650px;
+    margin-left: 100px;
+    margin-top: -275px;
+    margin-bottom: 100px;
 }
 
 /* Lineas del resumen */
