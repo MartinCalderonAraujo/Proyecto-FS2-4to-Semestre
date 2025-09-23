@@ -60,6 +60,11 @@
 }
 
 /*----- Boton Login/Registrar -----*/
+.btn-container { /* Contenedor flex para los botones */
+    display: flex;
+    gap: 20px; 
+}
+
 .barra-navegacion-header .nav-links li a:hover{
     color: #5bad4b;
 }

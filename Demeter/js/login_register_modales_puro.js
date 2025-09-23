@@ -169,18 +169,23 @@ document.addEventListener('DOMContentLoaded', function () {
         valid = false;
       }
 
+        //arreglo caracteres especiales
+      const is_caracter_especial = /[!@#$%^&*(),.?":{}|<>_]/;
+
+      // Validación de contraseña
       if (!password.value) {
         alert("La contraseña no puede estar vacía.");
         valid = false;
+      } else if (password.value.length < 6) {
+        alert("La contraseña debe tener al menos 6 caracteres.");
+        valid = false;
+      } else if (!is_caracter_especial.test(password.value)) {
+        alert("La contraseña debe contener al menos un carácter especial.");
+        valid = false;
       }
 
-      if (!confirm.value) {
-        alert("Debes confirmar tu contraseña.");
-        valid = false;
-      } else if (confirm.value !== password.value) {
-        alert("Las contraseñas no coinciden.");
-        valid = false;
-      }
+
+
 
       if (valid) {
         let users = getUsers();
