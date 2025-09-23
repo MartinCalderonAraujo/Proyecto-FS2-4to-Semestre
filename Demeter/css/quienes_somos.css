@@ -1,6 +1,5 @@
 .quienesSomos{
     font-size: 18px;
-    line-height: 1.6;
     color: #333;
     margin-bottom: 20px;
     padding-left: 50px;
@@ -19,7 +18,7 @@
 
 .quienesSomos p{
     margin-bottom: 15px;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: INTER, sans-serif;
     font-size: 20px;
 }
 
@@ -48,7 +47,8 @@ section div img:hover {
 }
 
 #descripcion-app p{
-    font-family: 'Courier New', Courier, monospace;
+    margin-bottom: 15px;
+    font-family: INTER, sans-serif;
     font-size: 18px;
     padding-left: 50px;
     padding-right: 50px;
@@ -72,4 +72,12 @@ section div img:hover {
     height: 450px;
     max-height: 80vh;
     border: none;
+}
+
+#ubicacion-empresa{
+    text-align: center;
+    font-size: 24px;
+    margin-top: 20px;
+    font-weight: bold;
+    color: #2c3e50;
 }
