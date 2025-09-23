@@ -18,16 +18,20 @@
     font-size: 20px;
 }
 
-
-/* NO VA AQUI */
-/* .footer a:link{
-    color: #ffffff;
-    background-color: #27ae60;
-    text-decoration: none;
+/* Mapa */
+.iframe-contenedor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
-.footer a:visited{
-    color: #ffffff;
-    background-color: #27ae60;
-    text-decoration: none;
-} */
+.iframe-contenedor iframe {
+    width: 100%;
+    max-width: 800px;
+    height: 450px;
+    max-height: 80vh;
+    border: none;
+}
