@@ -4,9 +4,8 @@ html, body {
     height: 100%;
 }
 body {
-    background-image: url('../img/Fondo_1.png');
-    height: 100vh;
-    background-size: cover;
+    background-image: url('../img/Fondo.png');
+    background-size: repeat;
     background-position: center;
     background-repeat: repeat;
 }
