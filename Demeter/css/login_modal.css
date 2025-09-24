@@ -1,24 +1,25 @@
 
-#login-modal.modal {
-  display: none;            /* oculto por defecto */
+#login-modal.modal,
+#register-modal.modal {
+  display: none;              /* oculto por defecto */
   position: fixed;
   z-index: 9999;
-  top: 0;
-  left: 0;
+  inset: 0;
   width: 100vw;
   height: 100vh;
-  overflow: auto;
+  overflow: auto;             
   background: rgba(0, 0, 0, 0.5);
 }
 
-/* Estado visible: flex para centrar SOLO cuando está activo */
-#login-modal.modal.active {
-  display: flex;
+#login-modal.modal.active,
+#register-modal.modal.active {
+  display: flex;              
   justify-content: center;
   align-items: center;
+  padding: 20px;              
 }
 
-/* Caja del modal */
+
 .modal-content {
   background: #222;
   color: #fff;
@@ -26,11 +27,12 @@
   border-radius: 10px;
   min-width: 320px;
   max-width: 90vw;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+  box-sizing: border-box;
   position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+
+  /* Para evitar desbordes en pantallas bajas sin cambiar el estilo */
+  max-height: 90vh;
+  overflow: auto;
 }
 
 /* Botón cerrar (X) */
@@ -41,12 +43,20 @@
   font-size: 24px;
   color: #fff;
   cursor: pointer;
-  background: none;
+  background: transparent;
   border: none;
   line-height: 1;
 }
 
-/* Formulario */
+/* Títulos */
+#login-title,
+#register-title {
+  margin: 0 24px 8px 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+
 #login-form {
   display: flex;
   flex-direction: column;
@@ -65,42 +75,18 @@
   border: 1px solid #888;
   background: #333;
   color: #fff;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-/* Estados de error simples */
-#login-form input.invalid,
-#login-form input:invalid {
-  border-color: #e74c3c;
-}
-
-.invalid-feedback {
-  display: none;
-  color: #e74c3c;
-  font-size: 0.9em;
-  margin-top: -6px;
-  margin-bottom: 2px;
-}
-
-#login-form input.invalid + .invalid-feedback,
-#login-form input:invalid + .invalid-feedback {
-  display: block;
-}
-
-/* Recordarme */
-.remember-row {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin: 4px 0 8px 0;
-}
-
-/* Botón enviar */
 #login-form button[type="submit"] {
+  margin-top: 6px;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
   background: #4caf50;
   color: #fff;
-  border: none;
-  border-radius: 6px;
-  padding: 10px;
   font-size: 1rem;
   cursor: pointer;
 }
@@ -109,98 +95,85 @@
   background: #388e3c;
 }
 
-/* Responsive simple */
-@media (max-width: 480px) {
-  .modal-content {
-    min-width: 90vw;
-    padding: 16px;
-  }
-}
 
-/* AQUI ESTA EL REGISTER NO TOCAR*/
-
-/* --- MODAL REGISTER --- */
-#register-modal.modal {
-  display: none;
-  position: fixed;
-  z-index: 9999;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  overflow: auto;
-  background: rgba(0, 0, 0, 0.5);
-}
-
-#register-modal.modal.active {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* Caja del modal */
-#register-modal .modal-content {
-  background: #222;
-  color: #fff;
-  padding: 24px 28px 18px 28px;
-  border-radius: 10px;
-  min-width: 320px;
-  max-width: 90vw;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-/* Formulario register */
 #register-form {
+  display: grid;                    /* distribución en grilla */
+  grid-template-columns: 1fr 1fr;   /* dos columnas en pantallas medianas/grandes */
+  gap: 12px 16px;
+  align-items: start;
+}
+
+/* Cada par label/input dentro de un bloque vertical simple */
+#register-form .field {
   display: flex;
   flex-direction: column;
-  gap: 10px;
 }
 
-#register-form label {
+/* Labels y inputs (estilo original) */
+#register-form .field > label {
+  display: block;
+  margin-bottom: 6px;
   font-weight: 500;
-  margin-bottom: 2px;
 }
 
-#register-form input {
+#register-form .field > input {
   padding: 10px;
   border-radius: 6px;
   border: 1px solid #888;
   background: #333;
   color: #fff;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-/* Estados de error simples */
-#register-form input.invalid,
-#register-form input:invalid {
-  border-color: #e74c3c;
+/* Utilidades de columna */
+#register-form .span-2 {
+  grid-column: 1 / -1;             /* ocupar ancho completo (dos columnas) */
 }
 
-#register-form input.invalid + .invalid-feedback,
-#register-form input:invalid + .invalid-feedback {
-  display: block;
+/* Botón de acción al ancho completo */
+#register-form .actions {
+  grid-column: 1 / -1;
 }
 
-/* Recordarme y botones */
-#register-form button[type="submit"] {
+#register-form .actions > button[type="submit"] {
+  margin-top: 6px;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
   background: #4caf50;
   color: #fff;
-  border: none;
-  border-radius: 6px;
-  padding: 10px;
   font-size: 1rem;
   cursor: pointer;
 }
 
-#register-form button[type="submit"]:hover {
+#register-form .actions > button[type="submit"]:hover {
   background: #388e3c;
 }
 
-/* Responsive simple */
-@media (max-width: 480px) {
+/* =========================
+   Estados de validación (opcional, simple)
+   ========================= */
+#login-form input:invalid,
+#register-form input:invalid {
+  border-color: #e74c3c;
+}
+
+/* =========================
+   Responsivo
+   ========================= */
+@media (max-width: 640px) {
+  #register-form {
+    grid-template-columns: 1fr;     /* en móvil, una sola columna */
+  }
+  #register-form .span-2,
+  #register-form .actions {
+    grid-column: 1 / -1;
+  }
+
+  /* Ajuste leve de padding en móviles */
+  #login-modal .modal-content,
   #register-modal .modal-content {
     min-width: 90vw;
     padding: 16px;

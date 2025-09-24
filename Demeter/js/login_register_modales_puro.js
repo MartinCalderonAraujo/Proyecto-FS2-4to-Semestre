@@ -35,30 +35,63 @@ document.addEventListener('DOMContentLoaded', function () {
     modalR.className = 'modal';
     modalR.innerHTML = `
       <div class="modal-content" id="register-modal-content">
-        <button class="close-modal" id="close-register-modal" aria-label="Cerrar">×</button>
-        <h2 id="register-title">Registrarse</h2>
-        <form id="register-form" novalidate>
-          <label for="register-email">Correo</label>
-          <input id="register-email" name="email" type="email" placeholder="tucorreo@dominio.com" required>
-          <label for="register-password">Contraseña</label>
-          <input id="register-password" name="password" type="password" placeholder="••••••••" required>
-          <label for="register-confirm">Confirmar contraseña</label>
-          <input id="register-confirm" name="confirm" type="password" placeholder="••••••••" required>
-          <label for="register-nombres">Nombres</label>
-          <input id="register-nombres" name="nombres" type="text" placeholder="Tus nombres" required>
-          <label for="register-apellidos">Apellidos</label>
-          <input id="register-apellidos" name="apellidos" type="text" placeholder="Tus apellidos" required>
-          <label for="register-region">Región</label>
-          <input id="register-region" name="region" type="text" placeholder="Región" required>
-          <label for="register-comuna">Comuna</label>
-          <input id="register-comuna" name="comuna" type="text" placeholder="Comuna" required>
-          <label for="register-rut">RUT</label>
-          <input id="register-rut" name="rut" type="text" placeholder="RUT" required>
-          <label for="register-direccion">Dirección</label>
-          <input id="register-direccion" name="direccion" type="text" placeholder="Dirección" required>
-          <button type="submit">Crear cuenta</button>
-        </form>
-      </div>
+  <button class="close-modal" id="close-register-modal" aria-label="Cerrar">×</button>
+  <h2 id="register-title">Registrarse</h2>
+
+  <form id="register-form" novalidate>
+    <!-- Correo (ancho completo) -->
+    <div class="field span-2">
+      <label for="register-email">Correo</label>
+      <input id="register-email" name="email" type="email" placeholder="tucorreo@dominio.com" required>
+    </div>
+
+    <!-- Password | Confirmación -->
+    <div class="field">
+      <label for="register-password">Contraseña</label>
+      <input id="register-password" name="password" type="password" placeholder="••••••••" required>
+    </div>
+    <div class="field">
+      <label for="register-confirm">Confirmar contraseña</label>
+      <input id="register-confirm" name="confirm" type="password" placeholder="••••••••" required>
+    </div>
+
+    <!-- Nombres | Apellidos -->
+    <div class="field">
+      <label for="register-nombres">Nombres</label>
+      <input id="register-nombres" name="nombres" type="text" placeholder="Tus nombres" required>
+    </div>
+    <div class="field">
+      <label for="register-apellidos">Apellidos</label>
+      <input id="register-apellidos" name="apellidos" type="text" placeholder="Tus apellidos" required>
+    </div>
+
+    <!-- Región | Comuna -->
+    <div class="field">
+      <label for="register-region">Región</label>
+      <input id="register-region" name="region" type="text" placeholder="Región" required>
+    </div>
+    <div class="field">
+      <label for="register-comuna">Comuna</label>
+      <input id="register-comuna" name="comuna" type="text" placeholder="Comuna" required>
+    </div>
+
+    <!-- RUT | Dirección (dirección ancho completo) -->
+    <div class="field">
+      <label for="register-rut">RUT</label>
+      <input id="register-rut" name="rut" type="text" placeholder="11.111.111-1" required>
+    </div>
+    <div class="field span-2">
+      <label for="register-direccion">Dirección</label>
+      <input id="register-direccion" name="direccion" type="text" placeholder="Calle y número" required>
+    </div>
+
+    <!-- Acción (ancho completo) -->
+    <div class="actions span-2">
+      <button type="submit">Crear cuenta</button>
+    </div>
+  </form>
+</div>
+
     `;
     document.body.appendChild(modalR);
   }
