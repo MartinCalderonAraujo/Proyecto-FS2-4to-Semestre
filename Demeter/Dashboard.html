@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Demeter/css/barra_navegacion.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>DashBoard Productos</title>
+</head>
+<body>
+  <div id="navbar"></div>
+
+  <div class="px-3 py-4 flex justify-center w-full bg-red">
+    <table class="w-full max-w-2xl text-sm shadow-md m-3 border border-gray-300 rounded">
+        <thead class="bg-cyan-700 text-white">
+            <tr>
+                <th class="p-3 border border-gray-300">ID</th>
+                <th class="p-3 border border-gray-300">Nombre</th>
+                <th class="p-3 border border-gray-300">Precio</th>
+                <th class="p-3 border border-gray-300">Imagen</th>
+            </tr>
+        </thead>
+        <tbody class="text-center">
+            <tr class="bg-white">
+                <td class="p-3 border border-gray-300"><img src="/Demeter/img/sensor de humedad.jpg" alt="Humedad" class="h-12"></td>
+                <td class="p-3 border border-gray-300">1</td>
+                <td class="p-3 border border-gray-300">Humedad</td>
+                <td class="p-3 border border-gray-300">$30.000</td>
+            </tr>
+            <tr class="bg-gray-50">
+                <td class="p-3 border border-gray-300"><img src="/Demeter/img/sensor de luz.jpg" alt="Luz" class="h-12"></td>
+                <td class="p-3 border border-gray-300">2</td>
+                <td class="p-3 border border-gray-300">Luz</td>
+                <td class="p-3 border border-gray-300">$30.000</td>
+            </tr>
+            <tr class="bg-white">
+                <td class="p-3 border border-gray-300"><img src="/Demeter/img/sensor de voltaje.jpg" alt="Voltaje" class="h-12"></td>
+                <td class="p-3 border border-gray-300">3</td>
+                <td class="p-3 border border-gray-300">Voltaje</td>
+                <td class="p-3 border border-gray-300">$30.000</td>
+            </tr>
+            <tr class="bg-gray-50">
+                <td class="p-3 border border-gray-300"><img src="/Demeter/img/sensor de ph.jpg" alt="Ph" class="h-12"></td>
+                <td class="p-3 border border-gray-300">4</td>
+                <td class="p-3 border border-gray-300">Ph</td>
+                <td class="p-3 border border-gray-300">$30.000</td>
+            </tr>
+            <tr class="bg-white">
+                <td class="p-3 border border-gray-300"><img src="/Demeter/img/sensor de temperatura.jpg" alt="Temperatura" class="h-12"></td>
+                <td class="p-3 border border-gray-300">5</td>
+                <td class="p-3 border border-gray-300">Temperatura</td>
+                <td class="p-3 border border-gray-300">$30.000</td>
+            </tr>
+            <tr class="bg-gray-50">
+                <td class="p-3 border border-gray-300"><img src="/Demeter/img/sensor de co2.jpg" alt="Co2" class="h-12"></td>
+                <td class="p-3 border border-gray-300">6</td>
+                <td class="p-3 border border-gray-300">Co2</td>
+                <td class="p-3 border border-gray-300">$30.000</td>
+            </tr>
+        </tbody>
+    </table>
+  </div>
+
+
+
+
+<script type="module" src="/Demeter/js/auth_service.js"></script>
+<script type="module" src="/Demeter/js/barra_navegacion.js"></script>
+<script type="module"> 
+import { DemeterAuth } from '/Demeter/js/auth_service.js';
+var auth = new DemeterAuth();
+    auth.validarAcceso('admin')
+    </script>
+</body>
+</html>

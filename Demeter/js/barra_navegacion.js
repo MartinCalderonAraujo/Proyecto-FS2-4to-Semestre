@@ -48,7 +48,7 @@ function montarBarra() {
 
             var botones = '';
             if (rol === 'admin') {
-                botones += `<a class="btn" href="/Demeter/extras/admin.html"><button>Dashboard</button></a>`;
+                botones += `<a class="btn" href="/Demeter/Dashboard.html"><button>Dashboard</button></a>`;
             } else {
                 botones += `<a class="btn" href="/Demeter/extras/login.html"><button>Mi Perfil</button></a>`;
             }
