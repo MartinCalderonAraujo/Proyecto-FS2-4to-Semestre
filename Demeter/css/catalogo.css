@@ -6,56 +6,7 @@
     box-sizing: border-box;
 }
 
-.body-catalogo{
-    margin: 0 auto;
-    max-width: 1200px;
-    font-family: sans-serif;
-    color: black;
-    
-}
 
-/*----- estilo del carrito -----*/
-.icono-carrito{
-    width: 40px;
-    height: 40px;
-    stroke: #000;
-}
-
-/*----- contador de productos -----*/
-.cont-productos{
-    position: absolute;
-    top: 55%;
-    right: 0;
-
-    background-color: #000;
-    color: #fff;
-    width: 25px;
-    height: 25px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-
-}
-
-.contenedor-productos-carrito{
-    position: absolute;
-    top: 50px;
-    right: 0;
-    background-color: #fff;
-    width: 400px;
-    z-index: 1;
-}
-
-.container-icon{
-    position: relative;
-}
-
-.contenedor-item img{
-    max-width: 100%;
-    cursor: pointer;
-}
 
 /*----- estilo de los items -----*/
 .contenedor-item{
@@ -101,10 +52,6 @@
     gap: 10px;
 }
 
-.price{
-    font-size: 18px;
-    font-weight: 900;
-}
 
 .info-producto button{
     border: none;
