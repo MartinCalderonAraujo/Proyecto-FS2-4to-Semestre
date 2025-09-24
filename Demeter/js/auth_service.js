@@ -46,13 +46,28 @@ export class DemeterAuth {
 
     this.guardarSesion({
       email: u.email,
-      rol: (u.rol ? u.rol : 'user')
+      rol: (u.rol ? u.rol : 'user'),
+      nombres: u.nombres,
+      apellidos: u.apellidos,
+      region: u.region,
+      comuna: u.comuna,
+      rut: u.rut,
+      direccion: u.direccion
     });
 
-    return { ok: true, usuario: { email: u.email, rol: (u.rol ? u.rol : 'user') } };
+    return { ok: true, usuario: {
+      email: u.email,
+      rol: (u.rol ? u.rol : 'user'),
+      nombres: u.nombres,
+      apellidos: u.apellidos,
+      region: u.region,
+      comuna: u.comuna,
+      rut: u.rut,
+      direccion: u.direccion
+    } };
   }
 
-  registrar(email, password) {
+  registrar(email, password, nombres, apellidos, region, comuna, rut, direccion) {
     if (this.buscarUsuario(email)) {
       return { ok: false, error: 'CORREO_YA_REGISTRADO' };
     }
@@ -61,16 +76,37 @@ export class DemeterAuth {
     usuarios.push({
       email: email,
       password: password,
-      rol: 'user'
+      rol: 'user',
+      nombres: nombres,
+      apellidos: apellidos,
+      region: region,
+      comuna: comuna,
+      rut: rut,
+      direccion: direccion
     });
     this.guardarUsuarios(usuarios);
 
     this.guardarSesion({
       email: email,
-      rol: 'user'
+      rol: 'user',
+      nombres: nombres,
+      apellidos: apellidos,
+      region: region,
+      comuna: comuna,
+      rut: rut,
+      direccion: direccion
     });
 
-    return { ok: true, usuario: { email: email, rol: 'user' } };
+    return { ok: true, usuario: {
+      email: email,
+      rol: 'user',
+      nombres: nombres,
+      apellidos: apellidos,
+      region: region,
+      comuna: comuna,
+      rut: rut,
+      direccion: direccion
+    } };
   }
 
   cerrarSesion(opciones) {
@@ -136,9 +172,21 @@ export class DemeterAuth {
   sembrarAdminSiHaceFalta(opciones) {
     var email = 'admin@gmail.com';
     var password = 'admin123_';
+    var nombres = 'Admin';
+    var apellidos = 'Principal';
+    var region = 'Metropolitana';
+    var comuna = 'Santiago';
+    var rut = '11.111.111-1';
+    var direccion = 'Calle Falsa 123';
     if (opciones) {
       if (opciones.email) { email = opciones.email; }
       if (opciones.password) { password = opciones.password; }
+      if (opciones.nombres) { nombres = opciones.nombres; }
+      if (opciones.apellidos) { apellidos = opciones.apellidos; }
+      if (opciones.region) { region = opciones.region; }
+      if (opciones.comuna) { comuna = opciones.comuna; }
+      if (opciones.rut) { rut = opciones.rut; }
+      if (opciones.direccion) { direccion = opciones.direccion; }
     }
 
     var usuarios = this.obtenerUsuarios();
@@ -147,7 +195,13 @@ export class DemeterAuth {
     usuarios.push({
       email: email,
       password: password,
-      rol: 'admin'
+      rol: 'admin',
+      nombres: nombres,
+      apellidos: apellidos,
+      region: region,
+      comuna: comuna,
+      rut: rut,
+      direccion: direccion
     });
     this.guardarUsuarios(usuarios);
   }

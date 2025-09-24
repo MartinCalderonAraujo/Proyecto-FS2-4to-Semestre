@@ -165,8 +165,7 @@
   margin-bottom: 2px;
 }
 
-#register-form input[type="email"],
-#register-form input[type="password"] {
+#register-form input {
   padding: 10px;
   border-radius: 6px;
   border: 1px solid #888;

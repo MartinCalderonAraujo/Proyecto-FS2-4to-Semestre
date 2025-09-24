@@ -44,6 +44,18 @@ document.addEventListener('DOMContentLoaded', function () {
           <input id="register-password" name="password" type="password" placeholder="••••••••" required>
           <label for="register-confirm">Confirmar contraseña</label>
           <input id="register-confirm" name="confirm" type="password" placeholder="••••••••" required>
+          <label for="register-nombres">Nombres</label>
+          <input id="register-nombres" name="nombres" type="text" placeholder="Tus nombres" required>
+          <label for="register-apellidos">Apellidos</label>
+          <input id="register-apellidos" name="apellidos" type="text" placeholder="Tus apellidos" required>
+          <label for="register-region">Región</label>
+          <input id="register-region" name="region" type="text" placeholder="Región" required>
+          <label for="register-comuna">Comuna</label>
+          <input id="register-comuna" name="comuna" type="text" placeholder="Comuna" required>
+          <label for="register-rut">RUT</label>
+          <input id="register-rut" name="rut" type="text" placeholder="RUT" required>
+          <label for="register-direccion">Dirección</label>
+          <input id="register-direccion" name="direccion" type="text" placeholder="Dirección" required>
           <button type="submit">Crear cuenta</button>
         </form>
       </div>
@@ -134,17 +146,35 @@ document.addEventListener('DOMContentLoaded', function () {
       var emailEl = document.getElementById('register-email');
       var passEl  = document.getElementById('register-password');
       var confEl  = document.getElementById('register-confirm');
+      var nombresEl = document.getElementById('register-nombres');
+      var apellidosEl = document.getElementById('register-apellidos');
+      var regionEl = document.getElementById('register-region');
+      var comunaEl = document.getElementById('register-comuna');
+      var rutEl = document.getElementById('register-rut');
+      var direccionEl = document.getElementById('register-direccion');
 
       var email     = emailEl && emailEl.value ? String(emailEl.value).trim() : '';
       var password = passEl && passEl.value ? String(passEl.value) : '';
       var confirmar  = confEl && confEl.value ? String(confEl.value) : '';
+      var nombres = nombresEl && nombresEl.value ? String(nombresEl.value).trim() : '';
+      var apellidos = apellidosEl && apellidosEl.value ? String(apellidosEl.value).trim() : '';
+      var region = regionEl && regionEl.value ? String(regionEl.value).trim() : '';
+      var comuna = comunaEl && comunaEl.value ? String(comunaEl.value).trim() : '';
+      var rut = rutEl && rutEl.value ? String(rutEl.value).trim() : '';
+      var direccion = direccionEl && direccionEl.value ? String(direccionEl.value).trim() : '';
 
       if (!email) { alert('El correo no puede estar vacío.'); return; }
       if (!password) { alert('La contraseña no puede estar vacía.'); return; }
       if (password.length < 6) { alert('La contraseña debe tener al menos 6 caracteres.'); return; }
       if (password !== confirmar) { alert('Las contraseñas no coinciden.'); return; }
+      if (!nombres) { alert('Los nombres no pueden estar vacíos.'); return; }
+      if (!apellidos) { alert('Los apellidos no pueden estar vacíos.'); return; }
+      if (!region) { alert('La región no puede estar vacía.'); return; }
+      if (!comuna) { alert('La comuna no puede estar vacía.'); return; }
+      if (!rut) { alert('El RUT no puede estar vacío.'); return; }
+      if (!direccion) { alert('La dirección no puede estar vacía.'); return; }
 
-      var res = auth.registrar(email, password);
+      var res = auth.registrar(email, password, nombres, apellidos, region, comuna, rut, direccion);
       if (!res || !res.ok) {
         alert('Este correo ya está registrado.');
         return;
