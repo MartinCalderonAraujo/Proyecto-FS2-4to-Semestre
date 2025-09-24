@@ -10,7 +10,16 @@ export class Inventario {
                 { id: 3, nombre: 'Voltaje', precio: 30000, imagen: 'img/sensor de voltaje.jpg' },
                 { id: 4, nombre: 'Ph', precio: 30000, imagen: 'img/sensor de ph.jpg' },
                 { id: 5, nombre: 'Temperatura', precio: 30000, imagen: 'img/sensor de temperatura.jpg' },
-                { id: 6, nombre: 'Co2', precio: 30000, imagen: 'img/sensor de co2.jpg' }
+                { id: 6, nombre: 'Co2', precio: 30000, imagen: 'img/sensor de co2.jpg' },
+                { id: 7, nombre: 'NPK', precio: 30000, imagen: 'img/sensor NPK.png' },
+                { id: 8, nombre: 'Portatil', precio: 30000, imagen: 'img/portatil.png' },
+                { id: 9, nombre: 'Camara de escaneo', precio: 30000, imagen: 'img/camara escaneo.png' },
+                { id: 10, nombre: 'Dron escaneo', precio: 30000, imagen: 'img/dron escaneo.png' },
+                { id: 11, nombre: 'Robot riego', precio: 30000, imagen: 'img/robot riego.png' },
+                { id: 12, nombre: 'Dron fumigador', precio: 30000, imagen: 'img/dron fumigador.png' },
+                { id: 13, nombre: 'Macetero v1', precio: 30000, imagen: 'img/macetero v1.png' },
+                { id: 14, nombre: 'Macetero v2', precio: 30000, imagen: 'img/macetero v2.png' },
+                { id: 15, nombre: 'Macetero v3', precio: 30000, imagen: 'img/macetero v3.png' }
             ];
         }
     }

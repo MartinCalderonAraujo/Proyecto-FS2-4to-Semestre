@@ -38,6 +38,15 @@ var productos = [
     new Producto(4, "Ph", 30000, "img/sensor de ph.jpg"),
     new Producto(5, "Temperatura", 30000, "img/sensor de temperatura.jpg"),
     new Producto(6, "Co2", 30000, "img/sensor de co2.jpg"),
+    new Producto(7, "NPK", 30000, "img/sensor NPK.png"),
+    new Producto(8, "Portatil", 30000, "img/sensor portatil.png"),
+    new Producto(9, "Camara de escaneo", 30000, "img/camara escaneo.png"),
+    new Producto(10, "Dron escaneo", 30000, "img/dron escaneo.png"),
+    new Producto(11, "Robot riego", 30000, "img/robot riego.png"),
+    new Producto(12, "Dron fumigador", 30000, "img/dron fumigador.png"),
+    new Producto(13, "Macetero v1", 30000, "img/macetero v1.png"),
+    new Producto(14, "Macetero v2", 30000, "img/macetero v2.png"),
+    new Producto(15, "Macetero v3", 30000, "img/macetero v3.png")    
 ]
 
 // se dejara el listado en LocalStorage
