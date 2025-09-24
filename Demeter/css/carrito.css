@@ -127,6 +127,7 @@
 
 /* TABLA */                                 /*  P E N D I E N T E    R E V I S A R  */
 table {
+    background-color: white;
     width: 100%;
     border-collapse: collapse;
     margin-top: 50px;
