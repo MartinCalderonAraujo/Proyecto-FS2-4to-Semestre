@@ -23,28 +23,27 @@ body {
 
 
 /* Hero */
-.hero {
+.carrusel-seccion {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 100px 10%;
-  background: #ffffff;
 }
 
-.hero-text {
+.carrusel-text {
   flex: 1;
   margin-right: 20px;
 }
 
-.hero-text h1 {
+.carrusel-text h1 {
   margin-bottom: 15px;
 }
 
-.hero-text p {
+.carrusel-text p {
   margin-bottom: 20px;
 }
 
-.hero-text button {
+.carrusel-text button {
   padding: 10px 20px;
   background: #000;
   color: #fff;
@@ -52,10 +51,9 @@ body {
   cursor: pointer;
 }
 
-.hero-img {
+.carrusel-img {
   flex: 1;
   height: 250px;
-  background: #ccc;
 }
 
 /* Productos */
@@ -73,12 +71,10 @@ body {
   border: 1px solid #ddd;
   padding: 10px;
   text-align: center;
-  background: #fff;
 }
 
 .card .img {
   height: 120px;
-  background: #ddd;
   margin-bottom: 10px;
 }
 
