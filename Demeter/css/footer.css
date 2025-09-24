@@ -52,18 +52,18 @@ footer {
 
 /* QUIENES SOMOS LINK */
 .footer-content a:link{
-    color: blue;
+    color: rgb(255, 255, 255);
     text-decoration: none;
 }
 
 .footer-content a:visited{
-    color: purple;
+    color: rgb(255, 255, 255);
     opacity: 10%;
     text-decoration: none;
     
 }
 
 .footer-content a:hover{
-    color: red;
+    color: rgb(143, 214, 121);
     text-decoration: underline;
 }
