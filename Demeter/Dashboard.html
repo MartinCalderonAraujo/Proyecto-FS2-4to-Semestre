@@ -10,7 +10,16 @@
 <body>
   <div id="navbar"></div>
 
-  <div class="px-3 py-4 flex justify-center w-full bg-red">
+  <div class="flex justify-center items-center flex-col gap-3 w-full m-4 bg-red">
+    <form id="formAgregarProducto" class="max-w-2xl bg-white shadow-md rounded px-4 py-3 mr-6 flex flex-col gap-2 w-80">
+      <h2 class="text-lg font-bold mb-2">Agregar Producto</h2>
+      <input type="number" id="inputId" class="border p-2 rounded" placeholder="ID" required>
+      <input type="text" id="inputNombre" class="border p-2 rounded" placeholder="Nombre" required>
+      <input type="number" id="inputPrecio" class="border p-2 rounded" placeholder="Precio" required>
+      <input type="text" id="inputImagen" class="border p-2 rounded" placeholder="Imagen (ej: img/sensor de humedad.jpg)" required>
+      <button type="submit" class="bg-cyan-700 text-white px-3 py-2 rounded hover:bg-cyan-800">Agregar</button>
+    </form>
+
     <table class="w-full max-w-2xl text-sm shadow-md m-3 border border-gray-300 rounded">
         <thead class="bg-cyan-700 text-white">
             <tr>
@@ -20,43 +29,8 @@
                 <th class="p-3 border border-gray-300">Imagen</th>
             </tr>
         </thead>
-        <tbody class="text-center">
-            <tr class="bg-white">
-                <td class="p-3 border border-gray-300"><img src="/Demeter/img/sensor de humedad.jpg" alt="Humedad" class="h-12"></td>
-                <td class="p-3 border border-gray-300">1</td>
-                <td class="p-3 border border-gray-300">Humedad</td>
-                <td class="p-3 border border-gray-300">$30.000</td>
-            </tr>
-            <tr class="bg-gray-50">
-                <td class="p-3 border border-gray-300"><img src="/Demeter/img/sensor de luz.jpg" alt="Luz" class="h-12"></td>
-                <td class="p-3 border border-gray-300">2</td>
-                <td class="p-3 border border-gray-300">Luz</td>
-                <td class="p-3 border border-gray-300">$30.000</td>
-            </tr>
-            <tr class="bg-white">
-                <td class="p-3 border border-gray-300"><img src="/Demeter/img/sensor de voltaje.jpg" alt="Voltaje" class="h-12"></td>
-                <td class="p-3 border border-gray-300">3</td>
-                <td class="p-3 border border-gray-300">Voltaje</td>
-                <td class="p-3 border border-gray-300">$30.000</td>
-            </tr>
-            <tr class="bg-gray-50">
-                <td class="p-3 border border-gray-300"><img src="/Demeter/img/sensor de ph.jpg" alt="Ph" class="h-12"></td>
-                <td class="p-3 border border-gray-300">4</td>
-                <td class="p-3 border border-gray-300">Ph</td>
-                <td class="p-3 border border-gray-300">$30.000</td>
-            </tr>
-            <tr class="bg-white">
-                <td class="p-3 border border-gray-300"><img src="/Demeter/img/sensor de temperatura.jpg" alt="Temperatura" class="h-12"></td>
-                <td class="p-3 border border-gray-300">5</td>
-                <td class="p-3 border border-gray-300">Temperatura</td>
-                <td class="p-3 border border-gray-300">$30.000</td>
-            </tr>
-            <tr class="bg-gray-50">
-                <td class="p-3 border border-gray-300"><img src="/Demeter/img/sensor de co2.jpg" alt="Co2" class="h-12"></td>
-                <td class="p-3 border border-gray-300">6</td>
-                <td class="p-3 border border-gray-300">Co2</td>
-                <td class="p-3 border border-gray-300">$30.000</td>
-            </tr>
+        <tbody class="tableInventario text-center">
+            <!-- Las filas fijas han sido eliminadas, la tabla se rellenará dinámicamente -->
         </tbody>
     </table>
   </div>
@@ -71,5 +45,92 @@ import { DemeterAuth } from '/Demeter/js/auth_service.js';
 var auth = new DemeterAuth();
     auth.validarAcceso('admin')
     </script>
+<script>
+  class Inventario {
+    constructor() {
+      var guardado = localStorage.getItem('productos');
+      if (guardado) { this.productos = JSON.parse(guardado); }
+      else {
+        this.productos = [
+          {id:1,nombre:'Humedad',precio:30000,imagen:'img/sensor de humedad.jpg'},
+          {id:2,nombre:'Luz',precio:30000,imagen:'img/sensor de luz.jpg'},
+          {id:3,nombre:'Voltaje',precio:30000,imagen:'img/sensor de voltaje.jpg'},
+          {id:4,nombre:'Ph',precio:30000,imagen:'img/sensor de ph.jpg'},
+          {id:5,nombre:'Temperatura',precio:30000,imagen:'img/sensor de temperatura.jpg'},
+          {id:6,nombre:'Co2',precio:30000,imagen:'img/sensor de co2.jpg'}
+        ];
+      }
+    }
+    agregarProducto(producto) {
+      var existe = this.productos.find(function(p){ return p.id === producto.id; });
+      if (!existe) {
+        this.productos.push(producto);
+        localStorage.setItem('productos', JSON.stringify(this.productos));
+      }
+    }
+    editarProducto(producto) {
+      var i = this.productos.findIndex(function(p){ return p.id === producto.id; });
+      if (i !== -1) {
+        this.productos[i] = producto;
+        localStorage.setItem('productos', JSON.stringify(this.productos));
+      }
+    }
+    eliminarProducto(id) {
+      this.productos = this.productos.filter(function(p){ return p.id !== id; });
+      localStorage.setItem('productos', JSON.stringify(this.productos));
+    }
+    obtenerProductos() { return this.productos; }
+  }
+
+  class ControladorInventario {
+    constructor(inventario) { this.inventario = inventario; }
+    agregarProducto(producto) { this.inventario.agregarProducto(producto); }
+    editarProducto(producto) { this.inventario.editarProducto(producto); }
+    eliminarProducto(id) { this.inventario.eliminarProducto(id); }
+    obtenerProductos() { return this.inventario.obtenerProductos(); }
+
+    //INYECTOR DEl inventario de localstorage a HTML
+    renderTabla(selector) {
+      const productos = this.obtenerProductos();
+      const tbody = document.querySelector(selector);
+      if (!tbody) return;
+      tbody.innerHTML = '';
+      productos.forEach((p, idx) => {
+        const row = document.createElement('tr');
+        row.className = idx % 2 === 0 ? 'bg-white' : 'bg-gray-50';
+        row.innerHTML = `
+          <td class="p-3 border border-gray-300"><img src="/Demeter/${p.imagen}" alt="${p.nombre}" class="h-12"></td>
+          <td class="p-3 border border-gray-300">${p.id}</td>
+          <td class="p-3 border border-gray-300">${p.nombre}</td>
+          <td class="p-3 border border-gray-300">$${p.precio.toLocaleString()}</td>
+        `;
+        tbody.appendChild(row);
+      });
+    }
+  }
+
+    var inventario = new Inventario();
+    var controlador = new ControladorInventario(inventario);
+
+    // --- FORMULARIO AGREGAR PRODUCTO ---
+    document.getElementById('formAgregarProducto').addEventListener('submit', function(e){
+      e.preventDefault();
+      const id = parseInt(document.getElementById('inputId').value);
+      const nombre = document.getElementById('inputNombre').value;
+      const precio = parseInt(document.getElementById('inputPrecio').value);
+      const imagen = document.getElementById('inputImagen').value;
+      controlador.agregarProducto({id, nombre, precio, imagen});
+      controlador.renderTabla('.tableInventario');
+      e.target.reset();
+    });
+    controlador.renderTabla('.tableInventario');
+
+
+</script>
+
+
+<script>
+
+</script>
 </body>
 </html>
