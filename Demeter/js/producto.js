@@ -118,9 +118,5 @@ function agregarProducto(id) {
         localStorage.setItem("carrito", JSON.stringify(carrito))
         console.log("Producto Agregado")
     }
-    // document.getElementById("items").innerHTML = items
-    // document.getElementById("subtotal").innerHTML = subtotal
-    // document.getElementById("iva").innerHTML = iva
-    // document.getElementById("total").innerHTML = total
 }
 

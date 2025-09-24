@@ -50,6 +50,39 @@ function cargaInicial(){
                 })                     
                 tabla=tabla+"</table>"
                 
-                document.getElementById("detalle").innerHTML=tabla     
+                document.getElementById("detalle").innerHTML=tabla  
+    
+                actualizarDetalleCompra()
 }
 
+window.onload = function () {
+    if (carrito && carrito.length > 0) {
+        cargaInicial();
+    } else {
+        document.getElementById("detalle").innerHTML = "<p>El carrito está vacío</p>";
+    }
+}
+
+function actualizarDetalleCompra() {
+    let productos = 0;
+    let items = 0;
+    let subtotal = 0;
+    let iva = 0;
+    let total = 0;
+
+    if (carrito && carrito.length > 0) {
+        carrito.forEach(i => {
+            productos += i.cantidad;
+            subtotal += i.total;
+        });
+        items = carrito.length;
+        iva = subtotal * 0.19;
+        total = subtotal + iva;
+    }
+
+    document.getElementById("productos").innerHTML = productos
+    document.getElementById("items").innerHTML = items
+    document.getElementById("subtotal").innerHTML = "$" + subtotal
+    document.getElementById("iva").innerHTML = "$" + iva
+    document.getElementById("total").innerHTML = "$" + total
+}

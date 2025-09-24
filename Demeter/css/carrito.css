@@ -1,14 +1,25 @@
+/* Titulo Carrito */
+
+#titulo-carrito h1{
+    text-align: left;
+    margin-top: 20px;
+    color: #333;
+    padding-left: 2.5%;
+}
+
+/* CARRITO GLOBAL */
+
 #carrito {
     background-color: white;
     border: 1px solid #333;
     color: #333;
-    padding: 20px 0;
-    margin-top: auto;
-    bottom: 0;
-    left: 0;
-    width: 75%;
-    max-width: 1000px;
-    margin-left: 25%;
+    padding: 20px 0; /* Espaciado Interno */
+    margin-top: auto; /* Espaciado Externo */
+    bottom: 0; /* Posicion Inferior */
+    left: 0; /* Posicion Izquierda */
+    width: 75%; /* Ancho */                          /*     <--   REVISAR ESTO           */
+    max-width: 1000px; /* Ancho Maximo */            /*     <--     CON ESTO             */
+    margin-left: 25%; /* Margen Izquierda */
 }
 
 .carrito-content {
@@ -16,13 +27,12 @@
     justify-content: space-between;
     align-items: center;
     background: #fff;
-    border: 1px solid #ccc;
-    border-radius: 12px;
-    padding: 20px;
-    margin: 20px auto;
-    max-width: 1000px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-    max-width: 450px;
+    border: 1px solid #ccc; /* Color y Forma Bordes */
+    border-radius: 12px; /* Redondear Bordes */
+    padding: 20px; /* Espaciado Interno */
+    margin: 20px auto; /* Espaciado Externo */
+    max-width: 1000px; /* Ancho Maximo */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08); /* Sombreado */
 }
 
 .carrito-content h2 {
@@ -35,17 +45,23 @@
     background: #27ae60;
     color: white;
     border: none;
-    padding: 10px 16px;
-    border-radius: 8px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+    padding: 10px 16px; /* Espaciado Interno */
+    border-radius: 8px; /* Redondear Bortdes */
+    font-size: 16px; /* Tamaño Letras */
+    cursor: pointer; /* Cambia El Mouse Al Pasar Por Encima */
+    transition: background-color 0.3s; /* Transicion Suave (Seguir Jugando Con Opciones) */
 }
 
 /* RECORDAR (CAMBIO DE COLOR AL PASAR MOUSE ENCIMA) */
 .carrito-content button:hover {
     background: #219150;
 }
+
+
+/* FALTA TUNEAR EL BOTON DE ELIMINAR */
+
+
+/*******************************************************************************************************************/
 
 /* PROCESO DE PAGO / TARJETA */
 .carrito-pago {
@@ -62,7 +78,7 @@
 }
 
 .carrito-pago h2 {
-    text-align: center;
+    text-align: center; /* Centrar Titulo */
     color: #333;
     margin-bottom: 15px;
 }
@@ -70,7 +86,7 @@
 .carrito-pago form {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 12px; /* Interlineado */
 }
 
 .carrito-pago label {
@@ -93,7 +109,7 @@
     padding: 12px;
     border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s; /* Transicion Suave Del Color Del Fondo */
     margin-top: 10px;
 }
 
@@ -107,8 +123,9 @@
     margin: 10px;
 }  */
 
+/*******************************************************************************************************************/
 
-/* INTENTO TABLA */
+/* TABLA */                                 /*  P E N D I E N T E    R E V I S A R  */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -175,10 +192,10 @@ table td::before {
     box-shadow: 0 4px 10px rgba(0,0,0,0.08);
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 12px; /* Interlineado */
     font-family: "Segoe UI", Tahoma, sans-serif;
     /* margin-right: 650px;
-    margin-left: 100px;
+    margin-left: 100px;          DESCARTAR, NO FUNCIONA
     margin-top: -275px; */
     margin-bottom: 50px;
 }
@@ -194,12 +211,35 @@ table td::before {
 }
 
 /* Poner en negrita y verde */
-#resumen span {
+#resumen span {   /* jugar mas con span */
     font-weight: bold;
     color: #27ae60;
 }
 
-/* Responsive: en móviles se apilan */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*******************************************************************************************************************/
+/*******************************************************************************************************************/
+
+/*******************************************************************************************************************/
+/*******************************************************************************************************************/
+
+
+
+/* Responsividad // en celulates se superpone             DA LO MISMO, NO ES PA CELU xd*/
 /* @media (max-width: 768px) {
     #resumen {
         padding: 15px 20px;
