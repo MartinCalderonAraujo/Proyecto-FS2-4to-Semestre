@@ -53,7 +53,7 @@ footer {
 /* QUIENES SOMOS LINK */
 .footer-content a:link{
     color: rgb(255, 255, 255);
-    text-decoration: none;
+    text-decoration: underline;
 }
 
 .footer-content a:visited{
