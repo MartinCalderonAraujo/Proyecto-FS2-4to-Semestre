@@ -82,17 +82,18 @@ export class DemeterAuth {
     if (redirigirA) { location.replace(redirigirA); }
   }
 
-  protegerPagina(opciones) {
-    var redirigirA = '/';
-    var rolRequerido = null;
-    if (opciones) {
-      if (typeof opciones.redirigirA !== 'undefined') { redirigirA = opciones.redirigirA; }
-      if (typeof opciones.rolRequerido !== 'undefined') { rolRequerido = opciones.rolRequerido; }
-    }
-
+  /*
+  Descripción: Verifica si el usuario tiene acceso a una sección según su rol.
+  Parámetros:
+    - rolRequerido: (string|null) El rol necesario para acceder. Si es null, solo se verifica que esté autenticado.
+    Efectos secundarios:
+    - Redirige a la página principal si no está autenticado o si no tiene el rol adecuado.
+  */
+  validarAcceso(rolRequerido) {
+    var homePage = '/Demeter/Demeter.html';
     var s = this.obtenerSesion();
-    if (!s || !s.email) { location.replace(redirigirA); return; }
-    if (rolRequerido && s.rol !== rolRequerido) { location.replace(redirigirA); }
+    if (!s || !s.email) { location.replace(homePage); return; }
+    if (rolRequerido && s.rol !== rolRequerido) { location.replace(homePage); }
   }
 
   /* ---------- Internos ---------- */
