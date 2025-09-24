@@ -12,9 +12,9 @@
 <body>
     <div id="navbar"></div>
 
-    <div class="flex justify-center items-center flex-col gap-3 w-full m-4 bg-red">
+    <div class="flex justify-center items-center flex-col gap-3 w-full m-4 bg-[url(/Demeter/img/Fondo.png)] bg-center bg-repeat">
         <form id="formAgregarProducto"
-            class="max-w-2xl bg-white shadow-md rounded px-4 py-3 mr-6 flex flex-col gap-2 w-80">
+            class="max-w-2xl bg-white shadow-md rounded rounded-lg !m-2 !p-4 flex flex-col gap-2 w-80">
             <h2 class="text-lg font-bold mb-2">Agregar Producto</h2>
             <input type="number" id="inputId" class="border p-2 rounded" placeholder="ID" required>
             <input type="text" id="inputNombre" class="border p-2 rounded" placeholder="Nombre" required>
@@ -24,7 +24,7 @@
             <button type="submit" class="bg-cyan-700 text-white px-3 py-2 rounded hover:bg-cyan-800">Agregar</button>
         </form>
 
-        <table class="w-full max-w-2xl text-sm shadow-md m-3 border border-gray-300 rounded">
+        <table class="w-full max-w-2xl text-sm shadow-md p-3 border border-gray-300 rounded">
             <thead class="bg-cyan-700 text-white">
                 <tr>
                     <th class="p-3 border border-gray-300">ID</th>
