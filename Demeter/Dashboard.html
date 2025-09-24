@@ -27,6 +27,7 @@
                 <th class="p-3 border border-gray-300">Nombre</th>
                 <th class="p-3 border border-gray-300">Precio</th>
                 <th class="p-3 border border-gray-300">Imagen</th>
+                <th class="p-3 border border-gray-300"> Acciones</th>
             </tr>
         </thead>
         <tbody class="tableInventario text-center">
@@ -103,6 +104,9 @@ var auth = new DemeterAuth();
           <td class="p-3 border border-gray-300">${p.id}</td>
           <td class="p-3 border border-gray-300">${p.nombre}</td>
           <td class="p-3 border border-gray-300">$${p.precio.toLocaleString()}</td>
+          <td class="p-3 border border-gray-300">
+            <button class="bg-red-500 text-white px-2 py-1 rounded hover:bg-red-600 mr-2" onclick="controlador.eliminarProducto(${p.id}); controlador.renderTabla('.tableInventario');">Eliminar</button>
+            </td>
         `;
         tbody.appendChild(row);
       });
