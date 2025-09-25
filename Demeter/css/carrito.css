@@ -5,9 +5,12 @@
     margin-top: 0%; /* Sin separacion de arriba */
     color: #333;
     padding-left: 2.5%; /* Separacion del texto con respecto al borde izq */
-    background-color: white;
-    border: 10px solid white;
-    border-color: white;
+    background-color: none;
+    border: none;
+    border-color: none;
+    text-align: center;
+    padding-top: 20px;
+    font-size: 30px;
 }
 
 /* CARRITO GLOBAL */
