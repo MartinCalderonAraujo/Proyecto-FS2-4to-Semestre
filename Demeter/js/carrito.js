@@ -44,13 +44,13 @@ function cargaInicial(){
                     tabla=tabla+"<td>"+i.cantidad+"</td>" 
                     tabla=tabla+"<td>"+i.total+"</td>"
                     tabla=tabla+"<td> <img src='"+i.imagen+"' width=150px height=100px></td>"
-                    tabla=tabla+"<td> <input type='button' value='Eliminar' onclick='eliminar("+pos+")'></td>"
+                    tabla=tabla+"<td> <input type='button' class='table-eliminar' value='Eliminar' onclick='eliminar("+pos+")'></td>"
                     tabla=tabla+"</tr>"   
                     pos=pos+1
                 })                     
                 tabla=tabla+"</table>"
                 
-                document.getElementById("detalle").innerHTML=tabla  
+                document.getElementById("tabla-carrito").innerHTML=tabla  
     
                 actualizarDetalleCompra()
 }
@@ -59,7 +59,7 @@ window.onload = function () {
     if (carrito && carrito.length > 0) {
         cargaInicial();
     } else {
-        document.getElementById("detalle").innerHTML = "<p>El carrito está vacío</p>";
+        document.getElementById("carrito").innerHTML = "<p>El carrito está vacío</p>";
     }
 }
 

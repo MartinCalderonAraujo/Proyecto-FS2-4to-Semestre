@@ -2,24 +2,25 @@
 
 #titulo-carrito h1{
     text-align: left;
-    margin-top: 20px;
+    margin-top: 0%; /* Sin separacion de arriba */
     color: #333;
-    padding-left: 2.5%;
+    padding-left: 2.5%; /* Separacion del texto con respecto al borde izq */
+    background-color: white;
+    border: 10px solid white;
+    border-color: white;
 }
 
 /* CARRITO GLOBAL */
 
 #carrito {
-    background-color: white;
-    border: 1px solid #333;
-    color: #333;
-    padding: 20px 0; /* Espaciado Interno */
-    margin-top: auto; /* Espaciado Externo */
-    bottom: 0; /* Posicion Inferior */
-    left: 0; /* Posicion Izquierda */
-    width: 75%; /* Ancho */                          /*     <--   REVISAR ESTO           */
-    max-width: 1000px; /* Ancho Maximo */            /*     <--     CON ESTO             */
-    margin-left: 25%; /* Margen Izquierda */
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Alinear en la parte de arriba */
+    width: 90%; /* Ancho */                          /*     <--   REVISAR ESTO           */
+    max-width: 1500px; /* Ancho Maximo */            /*     <--     CON ESTO             */
+    margin: 20px auto; /* Espaciado de afuera */
+    gap: 200px;
+
 }
 
 .carrito-content {
@@ -65,13 +66,14 @@
 
 /* PROCESO DE PAGO / TARJETA */
 .carrito-pago {
+    flex: 1;
+    max-width: 400px;
     background: #fff;
     border: 1px solid #ccc;
     border-radius: 12px;
     padding: 20px;
-    margin: 20px auto;
-    max-width: 450px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+
     /* margin-right: auto;
     margin-left: 990px;
     margin-top: -345px; */
@@ -126,33 +128,36 @@
 /*******************************************************************************************************************/
 
 /* TABLA */                                 /*  P E N D I E N T E    R E V I S A R  */
-table {
+#carrito table {
+    flex: 3;
+    margin: 0;
+    width: 120%;
     background-color: white;
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 50px;
-    width: 75%;
-    max-width: 1000px;
-    margin:auto;
-    margin-block: 20px;
-    font-family: "Segoe UI", Tahoma, sans-serif;
+
+    border-collapse: separate; /* Separar Bordes */
+    border-spacing: 0; /* Espacio Entre Bordes */
+    border: 2px solid #333; /* Color y Forma Bordes */
+    border-radius: 12px; /* Redondear Bordes */
+    background-color: white;
+    border-opacity: 0.5; /* Opacidad Bordes */
+
+
     /* margin-right: 650px;
     margin-left: auto; */
     /* box-shadow: 0 4px 10px rgba(0,0,0,0.08); */
 }
 
-/* table td {
-    text-align: right;
-    padding-left: 50%;
-    position: relative;
-} */
+table td {
+    text-align: center;
+    vertical-align: middle;
+    padding-left: 10px;
+}
 
 table td::before {
-    content: attr(data-label);
     position: absolute;
     left: 10px;
     width: 45%;
-    text-align: left;
+    text-align: center;
     font-weight: bold;
 }
 
@@ -161,18 +166,19 @@ table td::before {
     display: block;
 } */
 
-.table-eliminar button {
+.table-eliminar {
     background: #27ae60;
     color: white;
     border: none;
-    padding: 12px;
+    padding: 10px 15px;
     border-radius: 8px;
     cursor: pointer;
+    display: block;
+    margin: 0 auto;
     transition: background-color 0.3s;
-    margin-top: 10px;
 }
 
-.table-eliminar button:hover {
+.table-eliminar:hover {
     background: #219150;
 }
 
@@ -183,22 +189,17 @@ table td::before {
 /* RESUMEN COMPRA */
 /* Contenedor del resumen */
 #resumen {
-    width: 75%;
-    max-width: 1000px;
-    margin:auto;
+    flex: 1;
+    max-width: 800px;
+    margin: 20px auto 50px auto;
+    width: 100%;
     background-color: #fff;
     border: 1px solid #ccc;
     border-radius: 12px;
     padding: 20px 30px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-    display: flex;
-    flex-direction: column;
-    gap: 12px; /* Interlineado */
     font-family: "Segoe UI", Tahoma, sans-serif;
-    /* margin-right: 650px;
-    margin-left: 100px;          DESCARTAR, NO FUNCIONA
-    margin-top: -275px; */
-    margin-bottom: 50px;
+    margin-bottom: 10px;
 }
 
 /* Lineas del resumen */

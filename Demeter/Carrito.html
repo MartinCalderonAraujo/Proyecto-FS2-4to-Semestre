@@ -17,55 +17,58 @@
         <section>
             <div id="titulo-carrito">
                 <h1>Carrito de Compras</h1>
-            <div id="detalle"></div>
+            <div id="carrito">
+                <div id="tabla-carrito"></div>
+                <!-- Proceso Pago -->
+                <aside class="carrito-pago" id="proceso-pago">
+                    <div>
+                        <h2>Proceso de Pago</h2>
+                        <form id="formPago">
+                            <label for="nombre">Nombre Completo:</label>
+                            <input type="text" id="nombre" name="nombre" required>
+                            
+                            <label for="direccion">Dirección de Envío:</label>
+                            <input type="text" id="direccion" name="direccion" required>
+                            
+                            <label for="tarjeta">Número de Tarjeta:</label>
+                            <input type="text" id="tarjeta" name="tarjeta" required>
+                            
+                            <label for="cvv">CVV:</label>
+                            <input type="text" id="cvv" name="cvv" required>
+                            
+                            <button type="submit">Pagar Ahora</button>
+                        </form>
+                    </div>
+                    
+                    <!-- Detalle de Compra -->
+                    <div id="resumen">
+                        <p>Productos en carrito: <span id="productos">0</span></p>
+                        <p>Items distintos: <span id="items">0</span></p>
+                        <p>Subtotal: $<span id="subtotal">0</span></p>
+                        <p>IVA (19%): $<span id="iva">0</span></p>
+                        <p>Total: $<span id="total">0</span></p>
+                    </div>
+
+
+                    <!-- Resumen de Compra       NO SE USARÁ, DESCARTAR  -->
+                    <!-- 
+                    <div class="carrito-content" id="resumen-compra" onload="cargaInicial()">
+                        <div>
+                            <h2>Cantidad de Productos en el Carrito: <span id="cantidadProductos">0</span></h2>
+                        </div>
+                
+                        <div>
+                            <h2>Total a Pagar: $<span id="totalPagar">0</span></h2>
+                            <button onclick="finalizarCompra()">Finalizar Compra</button>
+                        </div>
+                    </div>
+                    -->
+                </aside>
+
+            </div>
         </section>
     </main>
-
     
-    <!-- Proceso Pago -->
-    <aside class="carrito-pago" id="proceso-pago">
-        <div>
-            <h2>Proceso de Pago</h2>
-            <form id="formPago">
-                <label for="nombre">Nombre Completo:</label>
-                <input type="text" id="nombre" name="nombre" required>
-                
-                <label for="direccion">Dirección de Envío:</label>
-                <input type="text" id="direccion" name="direccion" required>
-                
-                <label for="tarjeta">Número de Tarjeta:</label>
-                <input type="text" id="tarjeta" name="tarjeta" required>
-                
-                <label for="cvv">CVV:</label>
-                <input type="text" id="cvv" name="cvv" required>
-                
-                <button type="submit">Pagar Ahora</button>
-            </form>
-        </div>
-        
-        <!-- Resumen de Compra       NO SE USARÁ, DESCARTAR  -->
-        <!-- 
-        <div class="carrito-content" id="resumen-compra" onload="cargaInicial()">
-            <div>
-                <h2>Cantidad de Productos en el Carrito: <span id="cantidadProductos">0</span></h2>
-            </div>
-    
-            <div>
-                <h2>Total a Pagar: $<span id="totalPagar">0</span></h2>
-                <button onclick="finalizarCompra()">Finalizar Compra</button>
-            </div>
-        </div>
-        -->
-    </aside>
-    
-    <!-- Detalle de Compra -->
-    <div id="resumen">
-        <p>Productos en carrito: <span id="productos">0</span></p>
-        <p>Items distintos: <span id="items">0</span></p>
-        <p>Subtotal: $<span id="subtotal">0</span></p>
-        <p>IVA (19%): $<span id="iva">0</span></p>
-        <p>Total: $<span id="total">0</span></p>
-    </div>
     
     <!-- Footer -->
     <footer>
