@@ -27,7 +27,6 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 100px 10%;
 }
 
 .carrusel-text {
@@ -54,6 +53,15 @@ body {
 .carrusel-img {
   flex: 1;
   height: 250px;
+}
+
+.carrusel-img hr{
+    border: none;
+    width: 90%;
+    margin: auto;
+    height: 2px; /* Establece la altura de la línea */
+    background-color: #333; /* Define el color de la línea */
+    opacity: 0.2;
 }
 
 /* Productos */

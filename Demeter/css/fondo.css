@@ -4,7 +4,7 @@ html, body {
     height: 100%;
 }
 body {
-    background-image: url('../img/Fondo.png');
+    background-color: white;
     background-size: repeat;
     background-position: center;
     background-repeat: repeat;
